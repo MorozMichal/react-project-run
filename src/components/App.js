@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
+import Previews from './Previews/Previews'
+import './style.scss';
 
 class App extends Component {
   state = {
@@ -7,9 +8,10 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <>
-        <h1>PROJEKT</h1>
+        <Previews />
       </>
     )
   }
