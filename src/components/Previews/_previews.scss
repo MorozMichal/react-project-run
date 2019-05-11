@@ -1,5 +1,113 @@
 .section-previews {
-    h1 {
-        text-align: center;
+    display: flex;
+    flex-direction: row;
+    background-image: url(../img/background/previews_mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+
+    @media screen and (min-width: 1024px) {
+        background-image: url(../img/background/previews_full.jpg);
     }
+
+    .section-previews-content {
+        flex-basis: 75%;
+        text-align: center;
+        position: relative;
+
+        @media screen and (min-width: 739px) {
+            flex-basis: 65%;
+        }
+
+    }
+
+    .section-previews-racing {
+        flex-basis: 25%;
+        display: flex;
+        flex-wrap: wrap;
+        transition: 1s;
+        // transform: translateX(80%);
+
+        // @media screen and (min-width: 739px) {
+        //     transform: translateX(80%);
+        //     flex-basis: 35%;
+        // }
+
+        .section-previews-banner {
+            flex-basis: 20%;
+            position: relative;
+            background-color: rgba(210, 210, 210, 0.7);
+
+            i {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 1.2rem;
+                padding: 100px 0;
+
+
+            }
+
+            i:hover {
+                cursor: pointer;
+                color: white;
+            }
+
+        }
+
+        .section-previews-all {
+            display: flex;
+            flex-basis: 80%;
+            flex-wrap: wrap;
+
+            .preview {
+                flex-basis: 100%;
+                text-align: center;
+                // align-self: center;
+                // align-self: stretch;
+                padding: 3px 0;
+                background-color: rgba(210, 210, 210, 0.7);
+
+                @media screen and (min-width: 739px) {
+                    padding: 10px 0;
+                    flex-basis: 50%;
+                }
+
+                p:nth-child(1) {
+                    font-weight: 900;
+                    font-size: 0.7rem;
+
+                    @media screen and (min-width: 739px) {
+                        font-weight: 900;
+                        font-size: 1rem;
+                    }
+                }
+
+                p:nth-child(3) {
+                    display: none;
+
+                    @media screen and (min-width: 739px) {
+                        display: block;
+                    }
+                }
+
+                p {
+                    font-size: 0.6rem;
+
+                    @media screen and (min-width: 739px) {
+                        font-size: 0.7rem;
+                    }
+                }
+
+            }
+
+            .preview:hover {
+                background-color: rgba(210, 210, 210, 0.3);
+                cursor: pointer;
+            }
+
+        }
+    }
+
 }

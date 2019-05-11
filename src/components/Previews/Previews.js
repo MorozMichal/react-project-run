@@ -2,48 +2,51 @@ import React, { Component } from 'react';
 import PreviewsContent from './PreviewsContent'
 import PreviewsRacing from './PreviewsRacing'
 
-
-
-
-const API = ""
-
 class Previews extends Component {
     state = {
-        racing: null
+        racing: [],
+        arrayContent: []
+
     }
 
-    handleRacing = () => {
+    componentDidMount() {
+        fetch('racing.json')  //in public folder
+            .then(response => {
+                if (response.ok) {
+                    return response;
+                }
+                throw Error("błąd!!!!")
 
-        console.log("click")
-        fetch(API)
+            })
             .then(response => response.json())
-            .then(json => console.log(json));
-        // .then(response => {
-        //     if (response.ok) {
-        //         return response;
-        //     }
-        //     throw Error("błąda!!!!")
+            .then(data => {
+                this.setState({
+                    racing: data.racing
+                })
+            })
+            .catch(error => console.log(error + " cos nie tak"))
+    }
 
-        // })
-        // .then(response => response.json())
-        // .then(data => {
-        //     console.log(data);
-        //     this.setState({
-        //         racing: data.racing
-        //     })
-        // })
-        // .catch(error => console.log(error + " cos nie tak"))
+    handleClick = (id) => {
+        const lista = [...this.state.racing];
+        const index = lista.findIndex(list => list.id === id)
+        const arrayTarget = lista.slice(index, index + 1)
+        this.setState({
+            arrayContent: arrayTarget
+        })
+
     }
 
 
     render() {
+        const { racing, arrayContent } = this.state
         return (
             <>
                 <section className="section-previews">
-                    <h1>Sekcja Zapowiedzi</h1>
-                    <PreviewsContent />
-                    <button onClick={this.handleRacing}>pobierz zawody</button>
-                    <PreviewsRacing />
+                    <PreviewsContent
+                        arrayContent={arrayContent}
+                    />
+                    {racing ? <PreviewsRacing racing={racing} click={this.handleClick} /> : racing}
                 </section>
             </>
         )
