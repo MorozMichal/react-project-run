@@ -34,9 +34,7 @@ class Previews extends Component {
         this.setState({
             arrayContent: arrayTarget
         })
-
     }
-
 
     render() {
         const { racing, arrayContent } = this.state

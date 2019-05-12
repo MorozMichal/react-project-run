@@ -10,7 +10,6 @@ const PreviewsRacing = (props) => {
     const racing = racingDate.map(run => (
 
         <div key={run.id} className="preview" onClick={() => props.click(run.id)}>
-
             <p>{run.city}</p>
             <p>{run.date}</p>
             <p>{run.description}</p>
