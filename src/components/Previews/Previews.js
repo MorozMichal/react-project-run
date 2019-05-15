@@ -5,7 +5,9 @@ import PreviewsRacing from './PreviewsRacing'
 class Previews extends Component {
     state = {
         racing: [],
-        arrayContent: []
+        arrayContent: [],
+        classIcon: "fa-angle-left",
+        classVisible: ""
 
     }
 
@@ -36,6 +38,26 @@ class Previews extends Component {
         })
     }
 
+    handleIcon = () => {
+        this.setState({
+            arrayContent: [],
+        })
+        if (this.state.classIcon === 'fa-angle-left') {
+            this.setState({
+                classIcon: "fa-angle-right",
+                classVisible: "section-previews-racing-visible"
+
+            })
+        } else {
+            this.setState({
+                classIcon: "fa-angle-left",
+                classVisible: ""
+
+            })
+        }
+
+    }
+
     render() {
         const { racing, arrayContent } = this.state
         return (
@@ -44,7 +66,14 @@ class Previews extends Component {
                     <PreviewsContent
                         arrayContent={arrayContent}
                     />
-                    {racing ? <PreviewsRacing racing={racing} click={this.handleClick} /> : racing}
+                    {racing ?
+                        <PreviewsRacing
+                            racing={racing}
+                            click={this.handleClick}
+                            classVisible={this.state.classVisible}
+                            icon={this.state.classIcon}
+                            clickIcon={this.handleIcon} />
+                        : racing}
                 </section>
             </>
         )
