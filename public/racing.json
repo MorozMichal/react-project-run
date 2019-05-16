@@ -12,7 +12,7 @@
             "fullDate": "15.06.2019 godz. 22:00",
             "place": "Stadion Olimpijski",
             "distance": "21,0975km",
-            "limit": "13.000 osób",
+            "limit": "13.000 osób - zapisy zakończone",
             "route": "po ulicach Wrocławia na jednej pętli",
             "payment": {
                 "payment1": "według ilości zgłoszeń",
@@ -238,7 +238,7 @@
         },
         {
             "id": "11",
-            "city": "Miasto1",
+            "city": "Jelcz-Laskowice",
             "date": "2019-11-13",
             "description": "5 RST Półmaraton Swidnicki",
             "webOrganizer": "http://polmaraton.swidnica.pl/",
@@ -260,7 +260,7 @@
         },
         {
             "id": "12",
-            "city": "Miasto2",
+            "city": "Henryków",
             "date": "2019-11-17",
             "description": "5 RST Półmaraton Swidnicki",
             "webOrganizer": "http://polmaraton.swidnica.pl/",
@@ -282,7 +282,7 @@
         },
         {
             "id": "13",
-            "city": "Miasto3",
+            "city": "Kołobrzeg",
             "date": "2019-12-17",
             "description": "5 RST Półmaraton Swidnicki",
             "webOrganizer": "http://polmaraton.swidnica.pl/",
@@ -304,7 +304,7 @@
         },
         {
             "id": "14",
-            "city": "Miasto4",
+            "city": "Brzeg",
             "date": "2019-12-18",
             "description": "5 RST Półmaraton Swidnicki",
             "webOrganizer": "http://polmaraton.swidnica.pl/",
@@ -326,7 +326,7 @@
         },
         {
             "id": "15",
-            "city": "Miasto5",
+            "city": "Szczecin",
             "date": "2019-12-22",
             "description": "5 RST Półmaraton Swidnicki",
             "webOrganizer": "http://polmaraton.swidnica.pl/",
