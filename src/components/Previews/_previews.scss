@@ -28,6 +28,23 @@
             left: 0;
             font-size: 1rem;
 
+            .preview-content-wraper-item {
+                display: flex;
+
+
+                div:nth-child(1) {
+                    flex-basis: 25%;
+                    font-weight: bold;
+                    line-height: 1.5rem;
+                }
+
+                div:nth-child(2) {
+                    flex-basis: 75%;
+                    align-content: center;
+                    line-height: 1.5rem;
+                }
+            }
+
             p:nth-child(1) {
                 font-weight: 900;
             }
