@@ -15,8 +15,12 @@
             "limit": "13.000 osób",
             "route": "po ulicach Wrocławia na jednej pętli",
             "payment": {
-                "payment1": "1111111",
-                "payment2": "2222222"
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
             }
         },
         {
@@ -32,7 +36,14 @@
             "distance": "21,0975km",
             "limit": "13.000 osób",
             "route": "po ulicach Wrocławia na jednej pętli",
-            "payment": "uzależniona od ilości zgłoszonych: 90zł (1-4000), 100zł (4001-7000), 120zł (7001-1000), 140zł (10001 - 13000)"
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
         },
         {
             "id": "2",
@@ -47,7 +58,14 @@
             "distance": "21,0975km",
             "limit": "13.000 osób",
             "route": "po ulicach Wrocławia na jednej pętli",
-            "payment": "uzależniona od ilości zgłoszonych: 90zł (1-4000), 100zł (4001-7000), 120zł (7001-1000), 140zł (10001 - 13000)"
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
         },
         {
             "id": "3",
@@ -77,7 +95,14 @@
             "distance": "21.097km",
             "limit": "500",
             "route": "2opis trasy",
-            "payment": "do 05.05.2019 - 55zł, do 07.07.2019 - 75zł, do 17.08.2019 - 95zł"
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
         },
         {
             "id": "5",
@@ -92,7 +117,14 @@
             "distance": "21km",
             "limit": "500",
             "route": "2opis trasy",
-            "payment": "do 31.03.2019 - 60zł, do 31.05.2019 - 80zł, do 30.07.2019 - 100zł"
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
         },
         {
             "id": "6",
@@ -107,7 +139,14 @@
             "distance": "21km",
             "limit": "500",
             "route": "2opis trasy",
-            "payment": "do 31.03.2019 - 60zł, do 31.05.2019 - 80zł, do 30.07.2019 - 100zł"
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
         },
         {
             "id": "7",
@@ -122,7 +161,14 @@
             "distance": "21km",
             "limit": "500",
             "route": "2opis trasy",
-            "payment": "do 31.03.2019 - 60zł, do 31.05.2019 - 80zł, do 30.07.2019 - 100zł"
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
         },
         {
             "id": "8",
@@ -137,7 +183,14 @@
             "distance": "21km",
             "limit": "500",
             "route": "2opis trasy",
-            "payment": "do 31.03.2019 - 60zł, do 31.05.2019 - 80zł, do 30.07.2019 - 100zł"
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
         },
         {
             "id": "9",
@@ -152,7 +205,14 @@
             "distance": "21km",
             "limit": "500",
             "route": "2opis trasy",
-            "payment": "do 31.03.2019 - 60zł, do 31.05.2019 - 80zł, do 30.07.2019 - 100zł"
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
         },
         {
             "id": "10",
@@ -167,7 +227,14 @@
             "distance": "21km",
             "limit": "500",
             "route": "2opis trasy",
-            "payment": "do 31.03.2019 - 60zł, do 31.05.2019 - 80zł, do 30.07.2019 - 100zł"
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
         },
         {
             "id": "11",
@@ -182,7 +249,14 @@
             "distance": "21km",
             "limit": "500",
             "route": "2opis trasy",
-            "payment": "do 31.03.2019 - 60zł, do 31.05.2019 - 80zł, do 30.07.2019 - 100zł"
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
         },
         {
             "id": "12",
@@ -197,7 +271,14 @@
             "distance": "21km",
             "limit": "500",
             "route": "2opis trasy",
-            "payment": "do 31.03.2019 - 60zł, do 31.05.2019 - 80zł, do 30.07.2019 - 100zł"
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
         },
         {
             "id": "13",
@@ -212,7 +293,14 @@
             "distance": "21km",
             "limit": "500",
             "route": "2opis trasy",
-            "payment": "do 31.03.2019 - 60zł, do 31.05.2019 - 80zł, do 30.07.2019 - 100zł"
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
         },
         {
             "id": "14",
@@ -227,7 +315,14 @@
             "distance": "21km",
             "limit": "500",
             "route": "2opis trasy",
-            "payment": "do 31.03.2019 - 60zł, do 31.05.2019 - 80zł, do 30.07.2019 - 100zł"
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
         },
         {
             "id": "15",
@@ -242,7 +337,14 @@
             "distance": "21km",
             "limit": "500",
             "route": "2opis trasy",
-            "payment": "do 31.03.2019 - 60zł, do 31.05.2019 - 80zł, do 30.07.2019 - 100zł"
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
         }
 
     ]
