@@ -39,6 +39,15 @@ const PreviewsContent = (props) => {
                     <p>{run.payment.payment2}</p>
                 </div>
             </div>
+            {run.webOrganizer && <p><a href={`${run.webOrganizer}`} rel="noopener">Strona organizatora</a></p>}
+            {run.regulations && <p><a href={`${run.regulations}`} rel="noopener">Regulamin</a></p>}
+            {run.records && <p><a href={`${run.records}`} rel="noopener">Zapisy</a></p>}
+            {run.fullDate && <p>Termin: {run.fullDate}</p>}
+            {run.place && <p>Miejsce: {run.place}</p>}
+            {run.distance && <p>Dystans: {run.distance}</p>}
+            {run.limit && <p>limit uczestników: {run.limit}</p>}
+            {run.route && <p>Trasa: {run.route}</p>}
+            {run.payment && <p>Opłata startowa: {run.payment}</p>}
         </div>
     ))
     return (

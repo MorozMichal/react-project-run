@@ -25,7 +25,6 @@ const PreviewsRacing = (props) => {
             <p>{run.city}</p>
             <p>{run.date.substring(8, 10)}.{run.date.substring(5, 7)}.{run.date.substring(0, 4)}</p> {/* zamiana formatu daty z tej z JSON 2019-02-12 na 12.02.2019 */}
             <p>{run.description}</p>
-
         </div>
 
     ))
