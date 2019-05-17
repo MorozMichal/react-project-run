@@ -41,20 +41,26 @@ const PreviewsRacing = (props) => {
     return (
         <>
             <div>
-                <select value={props.month} onChange={props.input}>
+                <select name="month" value={props.month} onChange={props.inputMonth}>
                     <option value=""></option>
-                    <option value="styczeń">styczeń</option>
-                    <option value="luty">luty</option>
-                    <option value="marzec">marzec</option>
-                    <option value="kwiecień">kwiecień</option>
-                    <option value="maj">maj</option>
-                    <option value="czerwiec">czerwiec</option>
-                    <option value="lipiec">lipiec</option>
-                    <option value="sierpień">sierpień</option>
-                    <option value="wrzeseń">wrzesień</option>
-                    <option value="październik">październik</option>
-                    <option value="listopad">listopad</option>
-                    <option value="grudzień">grudzień</option>
+                    <option value="00">najbliższe</option>
+                    <option value="01">styczeń</option>
+                    <option value="02">luty</option>
+                    <option value="03">marzec</option>
+                    <option value="04">kwiecień</option>
+                    <option value="05">maj</option>
+                    <option value="06">czerwiec</option>
+                    <option value="07">lipiec</option>
+                    <option value="08">sierpień</option>
+                    <option value="09">wrzesień</option>
+                    <option value="10">październik</option>
+                    <option value="11">listopad</option>
+                    <option value="12">grudzień</option>
+                </select>
+                <select name="year" value={props.year} onChange={props.inputMonth} disabled={props.disabled}>
+                    <option value=""></option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
                 </select>
             </div>
             <div className={`section-previews-racing ${props.classVisible}`}>

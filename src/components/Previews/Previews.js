@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PreviewsContent from './PreviewsContent'
 import PreviewsRacing from './PreviewsRacing'
 
+
 class Previews extends Component {
     state = {
         racing: [],
@@ -9,9 +10,12 @@ class Previews extends Component {
         arrayContent: [],
         classIcon: "fa-angle-left",
         classVisible: "",
-        month: ""
+        month: "00",
+        year: new Date().getFullYear(),
+        disabled: false
 
     }
+
 
     componentDidMount() {
         fetch('racing.json')  //in public folder
@@ -25,13 +29,12 @@ class Previews extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({
-                    racing: data.racing
+                    racing: data.racing,
+                    racingMonth: data.racing
                 })
             })
 
-            .catch(error => console.log(error + " cos nie tak"));
-
-
+            .catch(error => console.log(error + " cos nie tak"))
     }
 
 
@@ -44,32 +47,37 @@ class Previews extends Component {
         })
     }
 
-    handleInput = (e) => {
-        console.log("działa")
+    handleMonth = (e) => {
         this.setState({
-            month: e.target.value,
-        })
+            [e.target.name]: e.target.value,
 
-        if (e.target.value === "") {
-            console.log(e.target.value)
-            console.log(this.state.racing)
+        });
+
+        if (e.target.value === "00") {
             this.setState({
-                racingMonth: this.state.racing
+                racingMonth: this.state.racing,
+                disabled: true,
+                year: new Date().getFullYear()
             })
-        } else if (e.target.value === "czerwiec") {
-            console.log(e.target.value)
-            console.log(this.state.racing)
+
+        } else if (e.target.value.length === 2) {
+            const daataMin = `${this.state.year}-${e.target.value}-01`
+            const daataMax = `${this.state.year}-${e.target.value}-31`
+            const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax)
             this.setState({
-                racingMonth: this.state.racing.slice(0, 4)
+                racingMonth: aaa,
+                disabled: false
             })
-        } else if (e.target.value === "kwiecień") {
-            console.log(e.target.value)
-            console.log(this.state.racing)
+
+        } else if (e.target.value.length === 4) {
+            const daataMin = `${e.target.value}-${this.state.month}-01`
+            const daataMax = `${e.target.value}-${this.state.month}-31`
+            const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax)
             this.setState({
-                racingMonth: this.state.racing.slice(0, 10)
+                racingMonth: aaa
             })
+
         }
-
     }
 
     handleIcon = () => {
@@ -79,7 +87,8 @@ class Previews extends Component {
         if (this.state.classIcon === 'fa-angle-left') {
             this.setState({
                 classIcon: "fa-angle-right",
-                classVisible: "section-previews-racing-visible"
+                classVisible: "section-previews-racing-visible",
+                // racingMonth: this.state.racing
 
             })
         } else {
@@ -93,6 +102,7 @@ class Previews extends Component {
     }
 
     render() {
+
         const { racing, arrayContent } = this.state
         return (
             <>
@@ -107,8 +117,10 @@ class Previews extends Component {
                             classVisible={this.state.classVisible}
                             icon={this.state.classIcon}
                             clickIcon={this.handleIcon}
-                            input={this.handleInput}
+                            inputMonth={this.handleMonth}
                             month={this.state.month}
+                            year={this.state.year}
+                            disabled={this.state.disabled}
                         />
                         : racing}
                 </section>

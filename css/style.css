@@ -133,17 +133,6 @@ body {
       flex-wrap: wrap;
   -webkit-transition: 1s;
   transition: 1s;
-  -webkit-transform: translateX(80%);
-          transform: translateX(80%);
-}
-
-@media screen and (min-width: 739px) {
-  .section-previews .section-previews-racing {
-    -webkit-transform: translateX(80%);
-            transform: translateX(80%);
-    -ms-flex-preferred-size: 35%;
-        flex-basis: 35%;
-  }
 }
 
 .section-previews .section-previews-racing .section-previews-banner {
