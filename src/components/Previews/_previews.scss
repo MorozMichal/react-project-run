@@ -104,12 +104,12 @@
         display: flex;
         flex-wrap: wrap;
         transition: 1s;
-        transform: translateX(80%);
+        // transform: translateX(80%);
 
-        @media screen and (min-width: 739px) {
-            transform: translateX(80%);
-            flex-basis: 35%;
-        }
+        // @media screen and (min-width: 739px) {
+        //     transform: translateX(80%);
+        //     flex-basis: 35%;
+        // }
 
         .section-previews-banner {
             flex-basis: 20%;

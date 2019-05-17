@@ -13,14 +13,14 @@ const PreviewsRacing = (props) => {
     //w JSON data format rrrr-mm-dd
     //zamienić zeby pkazywało sie od dnia na stronie
     const racingDate = props.racing.filter(run => Date.parse(run.date) > aktualnaData);
-    console.log(racingDate)
+    // console.log(racingDate)
 
     //posortowanie tablicy według daty
     racingDate.sort((a, b) => Date.parse(a.date) - Date.parse(b.date))
-    console.log(racingDate);
+    // console.log(racingDate);
 
     const racingDateShow = racingDate.slice(0, 16)
-    console.log(racingDateShow);
+    // console.log(racingDateShow);
 
 
     // const aa = racingDate.map(run => (
@@ -40,6 +40,23 @@ const PreviewsRacing = (props) => {
 
     return (
         <>
+            <div>
+                <select value={props.month} onChange={props.input}>
+                    <option value=""></option>
+                    <option value="styczeń">styczeń</option>
+                    <option value="luty">luty</option>
+                    <option value="marzec">marzec</option>
+                    <option value="kwiecień">kwiecień</option>
+                    <option value="maj">maj</option>
+                    <option value="czerwiec">czerwiec</option>
+                    <option value="lipiec">lipiec</option>
+                    <option value="sierpień">sierpień</option>
+                    <option value="wrzeseń">wrzesień</option>
+                    <option value="październik">październik</option>
+                    <option value="listopad">listopad</option>
+                    <option value="grudzień">grudzień</option>
+                </select>
+            </div>
             <div className={`section-previews-racing ${props.classVisible}`}>
                 <PreviewsArrow
                     icon={props.icon}

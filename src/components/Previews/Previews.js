@@ -5,9 +5,11 @@ import PreviewsRacing from './PreviewsRacing'
 class Previews extends Component {
     state = {
         racing: [],
+        racingMonth: [],
         arrayContent: [],
         classIcon: "fa-angle-left",
-        classVisible: ""
+        classVisible: "",
+        month: ""
 
     }
 
@@ -26,8 +28,12 @@ class Previews extends Component {
                     racing: data.racing
                 })
             })
-            .catch(error => console.log(error + " cos nie tak"))
+
+            .catch(error => console.log(error + " cos nie tak"));
+
+
     }
+
 
     handleClick = (id) => {
         const lista = [...this.state.racing];
@@ -36,6 +42,34 @@ class Previews extends Component {
         this.setState({
             arrayContent: arrayTarget
         })
+    }
+
+    handleInput = (e) => {
+        console.log("działa")
+        this.setState({
+            month: e.target.value,
+        })
+
+        if (e.target.value === "") {
+            console.log(e.target.value)
+            console.log(this.state.racing)
+            this.setState({
+                racingMonth: this.state.racing
+            })
+        } else if (e.target.value === "czerwiec") {
+            console.log(e.target.value)
+            console.log(this.state.racing)
+            this.setState({
+                racingMonth: this.state.racing.slice(0, 4)
+            })
+        } else if (e.target.value === "kwiecień") {
+            console.log(e.target.value)
+            console.log(this.state.racing)
+            this.setState({
+                racingMonth: this.state.racing.slice(0, 10)
+            })
+        }
+
     }
 
     handleIcon = () => {
@@ -68,11 +102,14 @@ class Previews extends Component {
                     />
                     {racing ?
                         <PreviewsRacing
-                            racing={racing}
+                            racing={this.state.racingMonth}
                             click={this.handleClick}
                             classVisible={this.state.classVisible}
                             icon={this.state.classIcon}
-                            clickIcon={this.handleIcon} />
+                            clickIcon={this.handleIcon}
+                            input={this.handleInput}
+                            month={this.state.month}
+                        />
                         : racing}
                 </section>
             </>
