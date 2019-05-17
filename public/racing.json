@@ -195,7 +195,7 @@
         {
             "id": "9",
             "city": "Poznań",
-            "date": "2019-10-20",
+            "date": "2019-12-31",
             "description": "20. PKO Poznań Maraton",
             "webOrganizer": "http://marathon.poznan.pl/",
             "regulations": "http://www.wp.com",
@@ -217,7 +217,7 @@
         {
             "id": "10",
             "city": "Świdnica",
-            "date": "2019-11-09",
+            "date": "2019-07-09",
             "description": "5 RST Półmaraton Swidnicki",
             "webOrganizer": "http://polmaraton.swidnica.pl/",
             "regulations": "http://www.wp.com",
@@ -239,7 +239,7 @@
         {
             "id": "11",
             "city": "Jelcz-Laskowice",
-            "date": "2019-11-13",
+            "date": "2019-12-13",
             "description": "5 RST Półmaraton Swidnicki",
             "webOrganizer": "http://polmaraton.swidnica.pl/",
             "regulations": "http://www.wp.com",
@@ -261,7 +261,7 @@
         {
             "id": "12",
             "city": "Henryków",
-            "date": "2019-11-17",
+            "date": "2019-11-01",
             "description": "5 RST Półmaraton Swidnicki",
             "webOrganizer": "http://polmaraton.swidnica.pl/",
             "regulations": "http://www.wp.com",
@@ -283,7 +283,7 @@
         {
             "id": "13",
             "city": "Kołobrzeg",
-            "date": "2019-12-17",
+            "date": "2019-08-17",
             "description": "5 RST Półmaraton Swidnicki",
             "webOrganizer": "http://polmaraton.swidnica.pl/",
             "regulations": "http://www.wp.com",
@@ -305,7 +305,7 @@
         {
             "id": "14",
             "city": "Brzeg",
-            "date": "2019-12-18",
+            "date": "2019-06-18",
             "description": "5 RST Półmaraton Swidnicki",
             "webOrganizer": "http://polmaraton.swidnica.pl/",
             "regulations": "http://www.wp.com",
@@ -327,7 +327,29 @@
         {
             "id": "15",
             "city": "Szczecin",
-            "date": "2019-12-22",
+            "date": "2019-09-22",
+            "description": "5 RST Półmaraton Swidnicki",
+            "webOrganizer": "http://polmaraton.swidnica.pl/",
+            "regulations": "http://www.wp.com",
+            "records": "https://runner.marathon.poznan.pl/run/join/4/choose",
+            "fullDate": "15.06.2019 godz. 22:00",
+            "place": "2miejsce staru z ulicą",
+            "distance": "21km",
+            "limit": "500",
+            "route": "2opis trasy",
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
+        },
+        {
+            "id": "16",
+            "city": "Oława",
+            "date": "2019-12-31",
             "description": "5 RST Półmaraton Swidnicki",
             "webOrganizer": "http://polmaraton.swidnica.pl/",
             "regulations": "http://www.wp.com",
