@@ -389,7 +389,52 @@
                 "payment5": "140zł - (10001 - 13000)",
                 "payment6": ""
             }
+        },
+        {
+            "id": "18",
+            "city": "Szczecin",
+            "date": "2020-05-15",
+            "description": "7. PKO Nocny Wrocław Półmaraton",
+            "webOrganizer": "http://pol.wroclawmaraton.pl/",
+            "regulations": "https://pol.wroclawmaraton.pl/dla-zawodnikow-left/regulamin.html",
+            "records": "http://online.datasport.pl/zapisy/portal/zawody.php?zawody=4451",
+            "fullDate": "15.06.2019 godz. 22:00",
+            "place": "Stadion Olimpijski",
+            "distance": "21,0975km",
+            "limit": "13.000 osób - zapisy zakończone",
+            "route": "po ulicach Wrocławia na jednej pętli",
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
+        },
+        {
+            "id": "19",
+            "city": "Szczecin",
+            "date": "2020-01-15",
+            "description": "7. PKO Nocny Wrocław Półmaraton",
+            "webOrganizer": "http://pol.wroclawmaraton.pl/",
+            "regulations": "https://pol.wroclawmaraton.pl/dla-zawodnikow-left/regulamin.html",
+            "records": "http://online.datasport.pl/zapisy/portal/zawody.php?zawody=4451",
+            "fullDate": "15.06.2019 godz. 22:00",
+            "place": "Stadion Olimpijski",
+            "distance": "21,0975km",
+            "limit": "13.000 osób - zapisy zakończone",
+            "route": "po ulicach Wrocławia na jednej pętli",
+            "payment": {
+                "payment1": "według ilości zgłoszeń",
+                "payment2": "90zł - (1 - 4000)",
+                "payment3": "100zł - (4001 - 7000)",
+                "payment4": "120zł - (7001 - 10000)",
+                "payment5": "140zł - (10001 - 13000)",
+                "payment6": ""
+            }
         }
+
 
     ]
 }
