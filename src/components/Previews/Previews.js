@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PreviewsContent from './PreviewsContent'
 import PreviewsRacing from './PreviewsRacing'
+import PreviewsArrow from './PreviewsArrow'
+import PreviewsSearch from './PreviewsSearch';
 
 
 class Previews extends Component {
@@ -12,6 +14,7 @@ class Previews extends Component {
         classVisible: "",
         month: "00",
         year: new Date().getFullYear(),
+        region: "",
         disabled: false
 
     }
@@ -34,7 +37,7 @@ class Previews extends Component {
                 })
             })
 
-            .catch(error => console.log(error + " cos nie tak"))
+            .catch(error => alert(error + "Nie pobrano danych JSON"))
     }
 
 
@@ -51,6 +54,7 @@ class Previews extends Component {
         this.setState({
             [e.target.name]: e.target.value,
 
+
         });
 
         if (e.target.value === "00") {
@@ -63,7 +67,8 @@ class Previews extends Component {
         } else if (e.target.value.length === 2) {
             const daataMin = `${this.state.year}-${e.target.value}-01`
             const daataMax = `${this.state.year}-${e.target.value}-31`
-            const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax)
+            const region = this.state.region
+            const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region === region)
             this.setState({
                 racingMonth: aaa,
                 disabled: false
@@ -72,11 +77,23 @@ class Previews extends Component {
         } else if (e.target.value.length === 4) {
             const daataMin = `${e.target.value}-${this.state.month}-01`
             const daataMax = `${e.target.value}-${this.state.month}-31`
-            const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax)
+            const region = this.state.region
+            const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region === region)
             this.setState({
                 racingMonth: aaa
             })
 
+        } else if (e.target.value.length > 4) {
+            const daataMin = `${this.state.year}-${this.state.month}-01`
+            const daataMax = `${this.state.year}-${this.state.month}-31`
+            const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region === e.target.value)
+            console.log(daataMin)
+            console.log(daataMax)
+            console.log(e.target.value)
+            console.log(aaa)
+            this.setState({
+                racingMonth: aaa
+            })
         }
     }
 
@@ -88,7 +105,8 @@ class Previews extends Component {
             this.setState({
                 classIcon: "fa-angle-right",
                 classVisible: "section-previews-racing-visible",
-                // racingMonth: this.state.racing
+                racingMonth: this.state.racing,
+                month: "00",
 
             })
         } else {
@@ -103,26 +121,33 @@ class Previews extends Component {
 
     render() {
 
-        const { racing, arrayContent } = this.state
+        const { arrayContent } = this.state
         return (
             <>
                 <section className="section-previews">
                     <PreviewsContent
                         arrayContent={arrayContent}
                     />
-                    {racing ?
-                        <PreviewsRacing
-                            racing={this.state.racingMonth}
-                            click={this.handleClick}
-                            classVisible={this.state.classVisible}
-                            icon={this.state.classIcon}
-                            clickIcon={this.handleIcon}
+                    <div className={`section-previews-racing ${this.state.classVisible}`}>
+                        <PreviewsSearch
                             inputMonth={this.handleMonth}
                             month={this.state.month}
                             year={this.state.year}
+                            region={this.state.region}
                             disabled={this.state.disabled}
                         />
-                        : racing}
+                        <div>
+                            <PreviewsArrow
+                                icon={this.state.classIcon}
+                                clickIcon={this.handleIcon}
+                            />
+                            <PreviewsRacing
+                                racing={this.state.racingMonth}
+                                click={this.handleClick}
+
+                            />
+                        </div>
+                    </div>
                 </section>
             </>
         )

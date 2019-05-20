@@ -55,7 +55,7 @@ const PreviewsContent = (props) => {
                     flexBasis: "25%",
                     alignSelf: "center"
                 }}>
-                    <img src={fotoCity} alt={`gołdo miasta ${run.city}`} />
+                    <img className="animation-previews-img" src={fotoCity} alt={`gołdo miasta ${run.city}`} />
                 </div>
             </div>
             {run.webOrganizer && <p><a href={`${run.webOrganizer}`} rel="noopener">Strona organizatora</a></p>}

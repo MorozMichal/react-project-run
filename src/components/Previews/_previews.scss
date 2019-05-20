@@ -5,7 +5,7 @@
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-    // overflow: hidden;
+    overflow: hidden;
 
     @media screen and (min-width: 1024px) {
         background-image: url(../img/background/previews_full.jpg);
@@ -14,9 +14,8 @@
     .section-previews-content {
         flex-basis: 75%;
         text-align: center;
-
         display: flex;
-        // position: relative;
+
 
         @media screen and (min-width: 739px) {
             flex-basis: 65%;
@@ -25,9 +24,6 @@
         .preview-content {
             background-color: rgba(210, 210, 210, 0.7);
             width: 100%;
-            // position: absolute;
-            // top: 0;
-            // left: 0;
             font-size: 1rem;
 
             .preview-content-wraper-item {
@@ -99,128 +95,142 @@
 
     }
 
-
-
     .section-previews-racing {
         flex-basis: 25%;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         transition: 1s;
-        transform: translateX(80%);
+        transform: translateX(90%);
         align-self: start;
+        height: 100vh;
 
 
         @media screen and (min-width: 739px) {
-            transform: translateX(80%);
+            transform: translateX(90%);
             flex-basis: 35%;
         }
 
         .section-previews-search {
             justify-content: flex-end;
             display: flex;
-            flex-basis: 100%;
+            flex-basis: 10%;
             background-color: rgba(210, 210, 210, 0.7);
-            padding: 10px 20px;
-
+            padding: 10px 0px;
 
             select {
-                padding: 10px 20px;
+                padding: 10px 0px;
                 height: 40px;
 
             }
 
             select:nth-child(1) {
                 font-weight: bold;
-                flex-basis: 50%;
+                flex-basis: 30%;
                 text-align: center;
                 letter-spacing: 1px;
             }
 
             select:nth-child(2) {
                 font-weight: bold;
-                flex-basis: 30%;
+                flex-basis: 15%;
                 text-align: center;
+                // margin-right: 20px;
+            }
+
+            select:nth-child(3) {
+                font-weight: bold;
+                flex-basis: 40%;
+                text-align: center;
+                margin-right: 20px;
             }
         }
 
-        .section-previews-banner {
-            flex-basis: 20%;
-            position: relative;
-            background-color: rgba(210, 210, 210, 0.7);
-
-            i {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-size: 1.2rem;
-                padding: 100px 0;
-
-
-            }
-
-            i:hover {
-                cursor: pointer;
-                color: white;
-            }
-
-        }
-
-        .section-previews-all {
+        div {
             display: flex;
-            flex-basis: 80%;
-            flex-wrap: wrap;
+            flex-direction: row;
+            flex-basis: 90%;
 
-            .preview {
-                flex-basis: 100%;
-                text-align: center;
-                // align-self: center;
-                // align-self: stretch;
-                padding: 3px 0;
+            .section-previews-banner {
+                flex-basis: 10%;
+                display: flex;
                 background-color: rgba(210, 210, 210, 0.7);
-                height: calc(100vh/9);
+                justify-content: center;
 
-                @media screen and (min-width: 739px) {
-                    padding: 10px 0;
-                    flex-basis: 50%;
+                i {
+                    align-self: center;
+                    transform: translateY(-5vh);
+                    font-size: 1.2rem;
+
                 }
 
-                p:nth-child(1) {
-                    font-weight: 900;
-                    font-size: 0.7rem;
+                i:hover {
+                    cursor: pointer;
+                    color: white;
+                }
+
+            }
+
+            .section-previews-all {
+                display: flex;
+                flex-basis: 90%;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                background-color: rgba(210, 210, 210, 0.7);
+
+                .preview {
+                    flex-direction: column;
+                    flex-basis: 100%;
+                    text-align: center;
+                    padding: 3px 0;
+                    overflow: hidden;
+                    height: calc(90vh/8);
 
                     @media screen and (min-width: 739px) {
+                        padding: 10px 0;
+                        flex-basis: 50%;
+                    }
+
+                    p:nth-child(1) {
                         font-weight: 900;
-                        font-size: 1rem;
-                    }
-                }
-
-                p:nth-child(3) {
-                    display: none;
-
-                    @media screen and (min-width: 739px) {
-                        display: block;
-                    }
-                }
-
-                p {
-                    font-size: 0.6rem;
-
-                    @media screen and (min-width: 739px) {
                         font-size: 0.7rem;
+
+                        @media screen and (min-width: 739px) {
+                            font-weight: 900;
+                            font-size: 1rem;
+                        }
                     }
+
+                    p:nth-child(3) {
+                        display: none;
+
+                        @media screen and (min-width: 739px) {
+                            display: block;
+                        }
+                    }
+
+                    p {
+                        font-size: 0.6rem;
+
+                        @media screen and (min-width: 739px) {
+                            font-size: 0.7rem;
+                        }
+                    }
+
+                }
+
+                .preview:hover {
+                    background-color: rgba(210, 210, 210, 0.3);
+                    cursor: pointer;
                 }
 
             }
-
-            .preview:hover {
-                background-color: rgba(210, 210, 210, 0.3);
-                cursor: pointer;
-            }
-
         }
 
     }
+
+    // .animation-previews-img {
+    //     animation: animation-previews-img 5s linear infinite;
+    // }
 
     .animation-previews-button {
         animation: animation-previews-button 1.5s linear infinite;
@@ -248,6 +258,16 @@
 
         100% {
             opacity: 1;
+        }
+    }
+
+    @keyframes animation-previews-img {
+        0% {
+            transform: rotateY(0deg);
+        }
+
+        100% {
+            transform: rotateY(360deg);
         }
     }
 
