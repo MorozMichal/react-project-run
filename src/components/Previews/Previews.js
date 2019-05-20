@@ -12,10 +12,10 @@ class Previews extends Component {
         arrayContent: [],
         classIcon: "fa-angle-left",
         classVisible: "",
-        month: "00",
-        year: new Date().getFullYear(),
-        region: "",
-        disabled: false
+        month: "0",
+        year: "",
+        region: "all",
+        // disabled: false
 
     }
 
@@ -50,31 +50,28 @@ class Previews extends Component {
         })
     }
 
+
     handleMonth = (e) => {
         this.setState({
             [e.target.name]: e.target.value,
-
-
         });
 
-        if (e.target.value === "00") {
-            this.setState({
-                racingMonth: this.state.racing,
-                disabled: true,
-                year: new Date().getFullYear()
-            })
+        console.log(e.target.name)
 
-        } else if (e.target.value.length === 2) {
+
+        if (e.target.name === "month") {
             const daataMin = `${this.state.year}-${e.target.value}-01`
             const daataMax = `${this.state.year}-${e.target.value}-31`
             const region = this.state.region
             const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region === region)
+            console.log(aaa)
             this.setState({
                 racingMonth: aaa,
-                disabled: false
+                // disabled: false
             })
 
-        } else if (e.target.value.length === 4) {
+        }
+        if (e.target.name === "year") {
             const daataMin = `${e.target.value}-${this.state.month}-01`
             const daataMax = `${e.target.value}-${this.state.month}-31`
             const region = this.state.region
@@ -83,19 +80,59 @@ class Previews extends Component {
                 racingMonth: aaa
             })
 
-        } else if (e.target.value.length > 4) {
+        }
+
+
+        if (e.target.name === "region") {
             const daataMin = `${this.state.year}-${this.state.month}-01`
             const daataMax = `${this.state.year}-${this.state.month}-31`
-            const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region === e.target.value)
-            console.log(daataMin)
-            console.log(daataMax)
-            console.log(e.target.value)
-            console.log(aaa)
+            const region = e.target.value
+            const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region === region)
             this.setState({
                 racingMonth: aaa
             })
+
+        }
+
+
+        if (e.target.name === "region" && e.target.value === "all") {
+            const daataMin = `${this.state.year}-${this.state.month}-01`
+            const daataMax = `${this.state.year}-${this.state.month}-31`
+            const region = e.target.value
+            const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region !== region)
+            this.setState({
+                racingMonth: aaa
+            })
+
+        }
+
+
+        if (this.state.month === "0" && e.target.value !== "all") {
+            const region = e.target.value
+            const aaa = this.state.racing.filter(array => array && array.region === region)
+            this.setState({
+                racingMonth: aaa,
+                // disabled: false
+            })
+        }
+        if (e.target.value === "0" && this.state.region !== "all") {
+            const region = this.state.region
+            const aaa = this.state.racing.filter(array => array && array.region === region)
+            this.setState({
+                racingMonth: aaa,
+                // disabled: false
+            })
+        }
+
+        if (e.target.value === "0") {
+            this.setState({
+                racingMonth: this.state.racing,
+                // disabled: true,
+                year: new Date().getFullYear()
+            })
         }
     }
+
 
     handleIcon = () => {
         this.setState({
@@ -144,7 +181,6 @@ class Previews extends Component {
                             <PreviewsRacing
                                 racing={this.state.racingMonth}
                                 click={this.handleClick}
-
                             />
                         </div>
                     </div>

@@ -136,8 +136,6 @@ body {
           flex-direction: column;
   -webkit-transition: 1s;
   transition: 1s;
-  -webkit-transform: translateX(90%);
-          transform: translateX(90%);
   -ms-flex-item-align: start;
       align-self: start;
   height: 100vh;
@@ -145,8 +143,6 @@ body {
 
 @media screen and (min-width: 739px) {
   .section-previews .section-previews-racing {
-    -webkit-transform: translateX(90%);
-            transform: translateX(90%);
     -ms-flex-preferred-size: 35%;
         flex-basis: 35%;
   }
