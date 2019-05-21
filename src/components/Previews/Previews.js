@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, {
+    Component
+} from 'react';
 import PreviewsContent from './PreviewsContent'
 import PreviewsRacing from './PreviewsRacing'
 import PreviewsArrow from './PreviewsArrow'
@@ -13,7 +15,7 @@ class Previews extends Component {
         classIcon: "fa-angle-left",
         classVisible: "",
         month: "0",
-        year: "00-2019",
+        year: "2019",
         region: "all",
         // disabled: false
 
@@ -21,7 +23,7 @@ class Previews extends Component {
 
 
     componentDidMount() {
-        fetch('racing.json')  //in public folder
+        fetch('racing.json') //in public folder
             .then(response => {
                 if (response.ok) {
                     return response;
@@ -55,40 +57,121 @@ class Previews extends Component {
             [e.target.name]: e.target.value,
         });
 
-    }
-
-
-
-    componentDidUpdate() {
-        const { region } = this.state
-        const aaa = this.state.racing.filter(array => array.region === region.slice(3))
-        if (region === "00-dolnośląskie" || region === "00-kujawsko-pomorskie" || region === "00-lubelskie" || region === "00-lubuski" || region === "00-łódzkie" || region === "00-małopolskie" || region === "00-mazowieckie" || region === "00-opolskie" || region === "00-podkarpackie" || region === "00-podlaskie" || region === "00-pomorskie" || region === "00-śląskie" || region === "00-świętokrzyskie" || region === "00-warmińsko-mazurskie" || region === "00-wielkopolskie" || region === "00-zachodniopomorskie") {
-            this.setState({
-                region: region.slice(3),
-                racingMonth: aaa
-            })
-        }
-        const { year, month } = this.state
-        const daataMin = year.length > 11 ? `${year.slice(3)}-${month.slice(3)}-01` : `${year}-${this.state.month}-01`;
-        const daataMax = year.length > 11 ? `${year.slice(3)}-${month.slice(3)}-31` : `${year}-${month}-31`;
-        console.log("to warunek min: " + daataMin);
-        console.log("to warunek mix: " + daataMax);
-        console.log("state - " + year);
-        console.log("state - " + month);
-        const bbbb = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax)
-        if (month === "00-06" && (year === "00-2019" || year === "00-2020")) {
-            this.setState({
-                racingMonth: bbbb,
-                year: year.slice(3),
-                month: month.slice(3),
-
-            })
-
-        }
-        console.log(bbbb)
+        // if (e.target.value === "") {
+        //     this.setState({
+        //         year: "2019",
+        //         region: "",
+        //         racingMonth: this.state.racing,
+        //     })
+        // }
+        // console.log(prevState.month)
+        // console.log(this.state.month)
 
 
     }
+
+
+
+    componentDidUpdate(prevProps, prevState) {
+        const daataMin = `${this.state.year}-${this.state.month}-01`
+        const daataMax = `${this.state.year}-${this.state.month}-31`
+        const ccc = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region === this.state.region)
+
+
+
+        if (this.state.month === "" && prevState.month !== this.state.month) {
+            const ddd = this.state.racing.filter(array => array.date)
+            // if (prevState.month !== this.state.month) {
+            console.log(this.state.racingMonth)
+            return (
+                this.setState({
+                    racingMonth: ddd
+                })
+            )
+            // }
+        }
+
+
+        else if (prevState.month !== this.state.month || prevState.region !== this.state.region || prevState.year !== this.state.year) {
+            this.setState({
+                // year: this.state.year,
+                // region: this.state.region,
+                // month: this.state.month,
+                racingMonth: ccc
+            })
+
+        }
+
+        // const aaa = this.state.racing.filter(array => array.region === this.state.region)
+        // if (prevState.region !== this.state.region) {
+        //     this.setState(prevState => ({
+        //         // region: prevState.region,
+        //         racingMonth: aaa
+        //     }))
+
+        // }
+
+
+        // const bbb = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax)
+
+        // if (prevState.year !== this.state.year) {
+        //     this.setState(prevState => ({
+        //         // year: prevState.year,
+        //         racingMonth: bbb
+        //     }))
+
+        // }
+
+
+        // if (this.state.month === "") {
+        //     this.setState({
+        //         racingMonth: this.state.racing,
+        //     })
+        // }
+
+
+
+        //  console.log(prevState.month)
+
+
+        // if (prevState.month !== "") {
+        //     this.setState({
+        //         racingMonth: this.state.racing,
+        //     })
+        // }
+
+    }
+
+
+    // componentDidUpdate() {
+    //     const { region } = this.state
+    //     const aaa = this.state.racing.filter(array => array.region === region.slice(3))
+    //     if (region === "00-dolnośląskie" || region === "00-kujawsko-pomorskie" || region === "00-lubelskie" || region === "00-lubuski" || region === "00-łódzkie" || region === "00-małopolskie" || region === "00-mazowieckie" || region === "00-opolskie" || region === "00-podkarpackie" || region === "00-podlaskie" || region === "00-pomorskie" || region === "00-śląskie" || region === "00-świętokrzyskie" || region === "00-warmińsko-mazurskie" || region === "00-wielkopolskie" || region === "00-zachodniopomorskie") {
+    //         this.setState({
+    //             region: region.slice(3),
+    //             racingMonth: aaa
+    //         })
+    //     }
+    //     const { year, month } = this.state
+    //     const daataMin = year.length > 11 ? `${year.slice(3)}-${month.slice(3)}-01` : `${year}-${this.state.month}-01`;
+    //     const daataMax = year.length > 11 ? `${year.slice(3)}-${month.slice(3)}-31` : `${year}-${month}-31`;
+    //     console.log("to warunek min: " + daataMin);
+    //     console.log("to warunek mix: " + daataMax);
+    //     console.log("state - " + year);
+    //     console.log("state - " + month);
+    //     const bbbb = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax)
+    //     if (month === "00-06" && (year === "00-2019" || year === "00-2020")) {
+    //         this.setState({
+    //             racingMonth: bbbb,
+    //             year: year.slice(3),
+    //             month: month.slice(3),
+
+    //         })
+
+    //     }
+    //     console.log(bbbb)
+
+    // }
 
     // getSnapshotBeforeUpdate(prevProps, prevState) {
     //     // console.log(prevState.year)
@@ -313,11 +396,11 @@ class Previews extends Component {
         const { arrayContent } = this.state
         return (
             <>
-                <section className="section-previews">
+                <section className="section-previews" >
                     <PreviewsContent
                         arrayContent={arrayContent}
                     />
-                    <div className={`section-previews-racing ${this.state.classVisible}`}>
+                    <div className={`section-previews-racing ${this.state.classVisible}`} >
                         <PreviewsSearch
                             inputMonth={this.handleMonth}
                             month={this.state.month}
@@ -330,13 +413,12 @@ class Previews extends Component {
                                 icon={this.state.classIcon}
                                 clickIcon={this.handleIcon}
                             />
-                            <PreviewsRacing
-                                racing={this.state.racingMonth}
+                            <PreviewsRacing racing={this.state.racingMonth}
                                 click={this.handleClick}
                             />
                         </div>
                     </div>
-                </section>
+                </section >
             </>
         )
     }
