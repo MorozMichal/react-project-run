@@ -14,9 +14,9 @@ class Previews extends Component {
         arrayContent: [],
         classIcon: "fa-angle-left",
         classVisible: "",
-        month: "0",
+        month: "",
         year: "2019",
-        region: "all",
+        region: "",
         // disabled: false
 
     }
@@ -77,30 +77,86 @@ class Previews extends Component {
         const daataMax = `${this.state.year}-${this.state.month}-31`
         const ccc = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region === this.state.region)
 
+        const regionDate = this.state.racing.filter(array => array.region === this.state.region && array.date >= daataMin && array.date <= daataMax)
 
+        const allDate = this.state.racing.filter(array => array.date && array.region === this.state.region)
 
-        if (this.state.month === "" && prevState.month !== this.state.month) {
-            const ddd = this.state.racing.filter(array => array.date)
-            // if (prevState.month !== this.state.month) {
-            console.log(this.state.racingMonth)
-            return (
-                this.setState({
-                    racingMonth: ddd
-                })
-            )
-            // }
-        }
+        const allDate2 = this.state.racing.filter(array => array.date && array.region === this.state.region)
 
+        const allDate3 = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region)
 
-        else if (prevState.month !== this.state.month || prevState.region !== this.state.region || prevState.year !== this.state.year) {
+        if (prevState.month !== this.state.month || prevState.year !== this.state.year || prevState.region !== this.state.region) {
             this.setState({
-                // year: this.state.year,
-                // region: this.state.region,
-                // month: this.state.month,
-                racingMonth: ccc
+                racingMonth: regionDate,
             })
 
         }
+
+        if (this.state.month === "00" && prevState.month !== this.state.month) {
+            this.setState({
+                racingMonth: allDate,
+            })
+
+        }
+
+        if (this.state.region === "all" && prevState.region !== this.state.region) { //ostat
+            this.setState({
+                racingMonth: allDate3,
+            })
+
+        }
+
+
+        if (prevState.region !== this.state.region && this.state.month === "00") {
+            this.setState({
+                racingMonth: allDate2,
+
+            })
+
+        }
+
+        if (this.state.region === "all" && prevState.month !== this.state.month) {
+            this.setState({
+                racingMonth: this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region),
+
+            })
+
+        }
+        console.log(allDate2)
+        console.log(allDate3)
+
+        // else if (this.state.month === "00" && prevState.month !== this.state.month) {  //1
+        //     this.setState({
+        //         racingMonth: allMonth,
+        //     })
+
+        // }
+
+        // else if (this.state.region === "all" && prevState.region !== this.state.region) { //2
+        //     this.setState({
+        //         racingMonth: allRegion,
+        //     })
+
+        // }
+
+
+
+        // else if (this.state.month === "00" && prevState.month !== this.state.month && this.state.region !== 1) {
+        //     this.setState({
+        //         racingMonth: allRegionDate,
+        //     })
+
+        // }
+
+        // else if (prevState.month !== this.state.month || prevState.region !== this.state.region || prevState.year !== this.state.year) {
+        //     this.setState({
+        //         // year: this.state.year,
+        //         // region: this.state.region,
+        //         // month: this.state.month,
+        //         racingMonth: ccc
+        //     })
+
+        // }
 
         // const aaa = this.state.racing.filter(array => array.region === this.state.region)
         // if (prevState.region !== this.state.region) {
