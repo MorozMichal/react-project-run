@@ -6,7 +6,7 @@ import PreviewsRacing from './PreviewsRacing'
 import PreviewsArrow from './PreviewsArrow'
 import PreviewsSearch from './PreviewsSearch';
 
-// const dateNow = new Date().getFullYear().toString()
+const yearNow = new Date().getFullYear().toString()
 class Previews extends Component {
     state = {
         racing: [],
@@ -14,10 +14,10 @@ class Previews extends Component {
         arrayContent: [],
         classIcon: "fa-angle-left",
         classVisible: "",
-        month: "",
-        year: "2019",
-        region: "",
-        // disabled: false
+        month: "00",
+        year: yearNow,
+        region: "all",
+        disabled: true
 
     }
 
@@ -57,373 +57,114 @@ class Previews extends Component {
             [e.target.name]: e.target.value,
         });
 
-        // if (e.target.value === "") {
-        //     this.setState({
-        //         year: "2019",
-        //         region: "",
-        //         racingMonth: this.state.racing,
-        //     })
-        // }
-        // console.log(prevState.month)
-        // console.log(this.state.month)
-
-
     }
-
-
 
     componentDidUpdate(prevProps, prevState) {
-        const daataMin = `${this.state.year}-${this.state.month}-01`
-        const daataMax = `${this.state.year}-${this.state.month}-31`
-        const ccc = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region === this.state.region)
+        const dateMin = `${this.state.year}-${this.state.month}-01`
+        const dateMax = `${this.state.year}-${this.state.month}-31`
 
-        const regionDate = this.state.racing.filter(array => array.region === this.state.region && array.date >= daataMin && array.date <= daataMax)
+        const { racing, region, month, year } = this.state
 
-        const allDate = this.state.racing.filter(array => array.date && array.region === this.state.region)
+        // const oneRegionOneDate = racing.filter(array => array.region === region && array.date >= dateMin && array.date <= dateMax)
+        // const allDateOneRegion = racing.filter(array => array.date && array.region === region)
+        // const allRegionOneDate = racing.filter(array => array.date >= dateMin && array.date <= dateMax && array.region)
+        // const allDateAllRegion = [...racing]
 
-        const allDate2 = this.state.racing.filter(array => array.date && array.region === this.state.region)
-
-        const allDate3 = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region)
-
-        if (prevState.month !== this.state.month || prevState.year !== this.state.year || prevState.region !== this.state.region) {
+        if (prevState.region !== region && region === "all" && month === "00") {
+            const allDateAllRegion = [...racing]
+            console.log(allDateAllRegion)
             this.setState({
-                racingMonth: regionDate,
+                racingMonth: allDateAllRegion,
+                disabled: true
             })
 
         }
 
-        if (this.state.month === "00" && prevState.month !== this.state.month) {
+        else if (prevState.month !== month && region === "all" && month === "00") {
+            const allDateAllRegion = [...racing]
+            console.log(allDateAllRegion)
             this.setState({
-                racingMonth: allDate,
+                racingMonth: allDateAllRegion,
+                disabled: true
             })
 
         }
 
-        if (this.state.region === "all" && prevState.region !== this.state.region) { //ostat
+        else if (month === "00" && prevState.month !== month) {
+            const allDateOneRegion = racing.filter(array => array.date && array.region === region)
+            console.log(allDateOneRegion)
             this.setState({
-                racingMonth: allDate3,
+                racingMonth: allDateOneRegion,
+                year: yearNow,
+                disabled: true
             })
 
         }
 
-
-        if (prevState.region !== this.state.region && this.state.month === "00") {
+        else if (region === "all" && prevState.region !== region) {
+            const allRegionOneDate = racing.filter(array => array.date >= dateMin && array.date <= dateMax && array.region)
+            console.log(allRegionOneDate)
             this.setState({
-                racingMonth: allDate2,
+                racingMonth: allRegionOneDate,
+                disabled: false
+            })
+
+        }
+
+        else if (prevState.region !== region && month === "00") {
+            const allDateOneRegion = racing.filter(array => array.date && array.region === region)
+            console.log(allDateOneRegion)
+            this.setState({
+                racingMonth: allDateOneRegion,
+                year: yearNow,
+                disabled: true
 
             })
 
         }
 
-        if (this.state.region === "all" && prevState.month !== this.state.month) {
+        else if (prevState.month !== month && region === "all") {
+            const allRegionOneDate = racing.filter(array => array.date >= dateMin && array.date <= dateMax && array.region)
+            console.log(allRegionOneDate)
             this.setState({
-                racingMonth: this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region),
+                racingMonth: allRegionOneDate,
+                disabled: false
+            })
+
+        }
+        else if (prevState.year !== year && month === "00") {
+            const allDateOneRegion = racing.filter(array => array.date && array.region === region)
+            console.log(allDateOneRegion)
+            this.setState({
+                racingMonth: allDateOneRegion,
+                disabled: true
 
             })
 
         }
-        console.log(allDate2)
-        console.log(allDate3)
 
-        // else if (this.state.month === "00" && prevState.month !== this.state.month) {  //1
-        //     this.setState({
-        //         racingMonth: allMonth,
-        //     })
+        else if (prevState.year !== year && region === "all") {
+            const allRegionOneDate = racing.filter(array => array.date >= dateMin && array.date <= dateMax && array.region)
+            console.log(allRegionOneDate)
+            this.setState({
+                racingMonth: allRegionOneDate,
+                disabled: false
 
-        // }
+            })
 
-        // else if (this.state.region === "all" && prevState.region !== this.state.region) { //2
-        //     this.setState({
-        //         racingMonth: allRegion,
-        //     })
+        }
 
-        // }
+        else if (prevState.month !== month || prevState.year !== year || prevState.region !== region) {
+            const oneRegionOneDate = racing.filter(array => array.region === region && array.date >= dateMin && array.date <= dateMax)
+            console.log(oneRegionOneDate)
+            this.setState({
+                racingMonth: oneRegionOneDate,
+                disabled: false
+            })
 
-
-
-        // else if (this.state.month === "00" && prevState.month !== this.state.month && this.state.region !== 1) {
-        //     this.setState({
-        //         racingMonth: allRegionDate,
-        //     })
-
-        // }
-
-        // else if (prevState.month !== this.state.month || prevState.region !== this.state.region || prevState.year !== this.state.year) {
-        //     this.setState({
-        //         // year: this.state.year,
-        //         // region: this.state.region,
-        //         // month: this.state.month,
-        //         racingMonth: ccc
-        //     })
-
-        // }
-
-        // const aaa = this.state.racing.filter(array => array.region === this.state.region)
-        // if (prevState.region !== this.state.region) {
-        //     this.setState(prevState => ({
-        //         // region: prevState.region,
-        //         racingMonth: aaa
-        //     }))
-
-        // }
-
-
-        // const bbb = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax)
-
-        // if (prevState.year !== this.state.year) {
-        //     this.setState(prevState => ({
-        //         // year: prevState.year,
-        //         racingMonth: bbb
-        //     }))
-
-        // }
-
-
-        // if (this.state.month === "") {
-        //     this.setState({
-        //         racingMonth: this.state.racing,
-        //     })
-        // }
-
-
-
-        //  console.log(prevState.month)
-
-
-        // if (prevState.month !== "") {
-        //     this.setState({
-        //         racingMonth: this.state.racing,
-        //     })
-        // }
+        }
 
     }
-
-
-    // componentDidUpdate() {
-    //     const { region } = this.state
-    //     const aaa = this.state.racing.filter(array => array.region === region.slice(3))
-    //     if (region === "00-dolnośląskie" || region === "00-kujawsko-pomorskie" || region === "00-lubelskie" || region === "00-lubuski" || region === "00-łódzkie" || region === "00-małopolskie" || region === "00-mazowieckie" || region === "00-opolskie" || region === "00-podkarpackie" || region === "00-podlaskie" || region === "00-pomorskie" || region === "00-śląskie" || region === "00-świętokrzyskie" || region === "00-warmińsko-mazurskie" || region === "00-wielkopolskie" || region === "00-zachodniopomorskie") {
-    //         this.setState({
-    //             region: region.slice(3),
-    //             racingMonth: aaa
-    //         })
-    //     }
-    //     const { year, month } = this.state
-    //     const daataMin = year.length > 11 ? `${year.slice(3)}-${month.slice(3)}-01` : `${year}-${this.state.month}-01`;
-    //     const daataMax = year.length > 11 ? `${year.slice(3)}-${month.slice(3)}-31` : `${year}-${month}-31`;
-    //     console.log("to warunek min: " + daataMin);
-    //     console.log("to warunek mix: " + daataMax);
-    //     console.log("state - " + year);
-    //     console.log("state - " + month);
-    //     const bbbb = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax)
-    //     if (month === "00-06" && (year === "00-2019" || year === "00-2020")) {
-    //         this.setState({
-    //             racingMonth: bbbb,
-    //             year: year.slice(3),
-    //             month: month.slice(3),
-
-    //         })
-
-    //     }
-    //     console.log(bbbb)
-
-    // }
-
-    // getSnapshotBeforeUpdate(prevProps, prevState) {
-    //     // console.log(prevState.year)
-    //     return {
-    //         prevState
-    //     }
-
-    // }
-
-    // componentDidUpdate(newProps, prevState, year) {
-    //     console.log(year)
-    //     // console.log(newState.month)
-    //     // console.log(newState.region)
-
-    // }
-
-
-    // handleMonth = (e) => {
-    //     const { year, month, region } = this.state;
-
-    // const { year, month, region } = e.target.value
-
-    // this.setState({
-    //     [e.target.name]: e.target.value,
-
-    // });
-
-
-    // if (month === "0" && year === "2019" && region === "all") {
-    //     console.log("ok")
-    // }
-
-    // if (e.target.value === "all") {
-    //     console.log("ok")
-    //     console.log(this.state.region)
-    // }
-
-    // if (e.target.name === "month") {
-    //     const daataMin = `${this.state.year}-${e.target.value}-01`
-    //     const daataMax = `${this.state.year}-${e.target.value}-31`
-    //     const region = this.state.region
-    //     const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region === region)
-    //     console.log(aaa)
-    //     this.setState({
-    //         racingMonth: aaa,
-    //         // disabled: false
-    //     })
-
-    // }
-
-    // if (e.target.name === "year") {
-    //     const daataMin = `${e.target.value}-${this.state.month}-01`
-    //     const daataMax = `${e.target.value}-${this.state.month}-31`
-    //     const region = this.state.region
-    //     const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region === region)
-    //     this.setState({
-    //         racingMonth: aaa
-    //     })
-
-    // }
-
-
-    // if (e.target.name === "region") {
-    //     const daataMin = `${this.state.year}-${this.state.month}-01`
-    //     const daataMax = `${this.state.year}-${this.state.month}-31`
-    //     const region = e.target.value
-    //     const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region === region)
-    //     this.setState({
-    //         racingMonth: aaa
-    //     })
-
-    // }
-
-
-    // if (e.target.name === "region" && e.target.value === "all") {
-    //     const daataMin = `${this.state.year}-${this.state.month}-01`
-    //     const daataMax = `${this.state.year}-${this.state.month}-31`
-    //     const region = e.target.value
-    //     const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region !== region)
-    //     this.setState({
-    //         racingMonth: aaa
-    //     })
-
-    // }
-
-
-    // if (this.state.month === "0" && e.target.value !== "all") {
-    //     const region = e.target.value
-    //     const aaa = this.state.racing.filter(array => array && array.region === region)
-    //     this.setState({
-    //         racingMonth: aaa,
-    //         // disabled: false
-    //     })
-    // }
-
-    // if (e.target.value === "0" && this.state.region !== "all") {
-    //     const region = this.state.region
-    //     const aaa = this.state.racing.filter(array => array && array.region === region)
-    //     this.setState({
-    //         racingMonth: aaa,
-    //         // disabled: false
-    //     })
-    // }
-
-    // if (e.target.value === "0") {
-    //     this.setState({
-    //         racingMonth: this.state.racing,
-    //         // disabled: true,
-    //         year: new Date().getFullYear()
-    //     })
-    // }
-
-
-    // }
-
-
-
-    // handleMonth = (e) => {
-    //     this.setState({
-    //         [e.target.name]: e.target.value,
-    //     });
-
-    //     if (e.target.name === "month") {
-    //         const daataMin = `${this.state.year}-${e.target.value}-01`
-    //         const daataMax = `${this.state.year}-${e.target.value}-31`
-    //         const region = this.state.region
-    //         const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region === region)
-    //         console.log(aaa)
-    //         this.setState({
-    //             racingMonth: aaa,
-    //             // disabled: false
-    //         })
-
-    //     }
-    //     if (e.target.name === "year") {
-    //         const daataMin = `${e.target.value}-${this.state.month}-01`
-    //         const daataMax = `${e.target.value}-${this.state.month}-31`
-    //         const region = this.state.region
-    //         const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region === region)
-    //         this.setState({
-    //             racingMonth: aaa
-    //         })
-
-    //     }
-
-
-    //     if (e.target.name === "region") {
-    //         const daataMin = `${this.state.year}-${this.state.month}-01`
-    //         const daataMax = `${this.state.year}-${this.state.month}-31`
-    //         const region = e.target.value
-    //         const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region === region)
-    //         this.setState({
-    //             racingMonth: aaa
-    //         })
-
-    //     }
-
-
-    //     if (e.target.name === "region" && e.target.value === "all") {
-    //         const daataMin = `${this.state.year}-${this.state.month}-01`
-    //         const daataMax = `${this.state.year}-${this.state.month}-31`
-    //         const region = e.target.value
-    //         const aaa = this.state.racing.filter(array => array.date >= daataMin && array.date <= daataMax && array.region !== region)
-    //         this.setState({
-    //             racingMonth: aaa
-    //         })
-
-    //     }
-
-
-    //     if (this.state.month === "0" && e.target.value !== "all") {
-    //         const region = e.target.value
-    //         const aaa = this.state.racing.filter(array => array && array.region === region)
-    //         this.setState({
-    //             racingMonth: aaa,
-    //             // disabled: false
-    //         })
-    //     }
-    //     if (e.target.value === "0" && this.state.region !== "all") {
-    //         const region = this.state.region
-    //         const aaa = this.state.racing.filter(array => array && array.region === region)
-    //         this.setState({
-    //             racingMonth: aaa,
-    //             // disabled: false
-    //         })
-    //     }
-
-    //     if (e.target.value === "0") {
-    //         this.setState({
-    //             racingMonth: this.state.racing,
-    //             // disabled: true,
-    //             year: new Date().getFullYear()
-    //         })
-    //     }
-    // }
-
 
     handleIcon = () => {
         this.setState({
@@ -449,32 +190,31 @@ class Previews extends Component {
 
     render() {
 
-        const { arrayContent } = this.state
+        const { arrayContent, racingMonth, classVisible, year, month, region, disabled, classIcon } = this.state
         return (
             <>
                 <section className="section-previews" >
                     <PreviewsContent
                         arrayContent={arrayContent}
                     />
-                    <div className={`section-previews-racing ${this.state.classVisible}`} >
-                        <PreviewsSearch
-                            inputMonth={this.handleMonth}
-                            month={this.state.month}
-                            year={this.state.year}
-                            region={this.state.region}
-                            disabled={this.state.disabled}
+                    <div className={`section-previews-racing ${classVisible}`}>
+                        <PreviewsSearch inputMonth={this.handleMonth}
+                            month={month}
+                            year={year}
+                            region={region}
+                            disabled={disabled}
                         />
                         <div>
-                            <PreviewsArrow
-                                icon={this.state.classIcon}
+                            <PreviewsArrow icon={classIcon}
                                 clickIcon={this.handleIcon}
                             />
-                            <PreviewsRacing racing={this.state.racingMonth}
+                            <PreviewsRacing
+                                racing={racingMonth}
                                 click={this.handleClick}
                             />
                         </div>
                     </div>
-                </section >
+                </section>
             </>
         )
     }

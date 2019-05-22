@@ -5,8 +5,9 @@ const PreviewsSearch = (props) => {
     return (
         <div className="section-previews-search">
             <select name="month" value={props.month} onChange={props.inputMonth}>
-                <option value=""></option>
                 <option value="00">Najbliższe</option>
+                <option disabled>----------</option>
+
                 <option value="01">Styczeń</option>
                 <option value="02">Luty</option>
                 <option value="03">Marzec</option>
@@ -21,13 +22,12 @@ const PreviewsSearch = (props) => {
                 <option value="12">Grudzień</option>
             </select>
             <select name="year" value={props.year} onChange={props.inputMonth} disabled={props.disabled}>
-                <option value=""></option>
                 <option value={yearNow}>{yearNow}</option>
                 <option value={yearNow + 1}>{yearNow + 1}</option>
             </select>
             <select name="region" value={props.region} onChange={props.inputMonth}>
-                <option value=""></option>
                 <option value="all">Wszystkie</option>
+                <option disabled>----------</option>
                 <option value="dolnośląskie">Dolnośląskie</option>
                 <option value="kujawsko-pomorskie">Kujawsko-Pomorskie</option>
                 <option value="lubelskie">Lubelskie</option>
