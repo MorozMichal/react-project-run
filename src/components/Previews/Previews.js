@@ -7,6 +7,7 @@ import PreviewsArrow from './PreviewsArrow'
 import PreviewsSearch from './PreviewsSearch';
 
 const yearNow = new Date().getFullYear().toString()
+
 class Previews extends Component {
     state = {
         racing: [],
@@ -17,10 +18,19 @@ class Previews extends Component {
         month: "00",
         year: yearNow,
         region: "all",
-        disabled: true
+        disabled: true,
+        check42km: true,
+        check21km: true,
+        check10km: true,
 
     }
 
+    handleCheck = (e) => {
+        this.setState({
+            [e.target.name]: e.target.checked
+        })
+
+    }
 
     componentDidMount() {
         fetch('racing.json') //in public folder
@@ -62,9 +72,51 @@ class Previews extends Component {
     componentDidUpdate(prevProps, prevState) {
         const dateMin = `${this.state.year}-${this.state.month}-01`
         const dateMax = `${this.state.year}-${this.state.month}-31`
-
         const { racing, region, month, year } = this.state
 
+        if (this.state.check42km === true && prevState.check42km !== this.state.check42km) {
+            const distance42 = this.state.racing.filter(distance => distance.distance === "42km")
+            this.setState({
+                racingMonth: distance42,
+
+            })
+        }
+
+        else if (prevState.check42km !== this.state.check42km) {
+            const distance42 = this.state.racing.filter(distance => distance.distance !== "42km")
+            this.setState({
+                racingMonth: distance42,
+
+            })
+        }
+
+        if (this.state.check21km === true && prevState.check21km !== this.state.check21km) {
+            const distance21 = this.state.racing.filter(distance => distance.distance === "21km")
+            this.setState({
+                racingMonth: distance21,
+
+            })
+        }
+
+        else if (prevState.check21km !== this.state.check21km) {
+            const distance21 = this.state.racing.filter(distance => distance.distance !== "21km")
+            this.setState({
+                racingMonth: distance21,
+
+            })
+        }
+        // }
+        // if (this.state.check21km === true) {
+        //     const distance21 = this.state.racing.filter(distance => distance.distance === "21km")
+        //     console.log(distance21)
+        // }
+
+        // if (this.state.check10km === true) {
+        //     const distance10 = this.state.racing.filter(distance => distance.distance === "10km")
+        //     console.log(distance10)
+        // }
+
+        //wrzucono do osobnych if żeby nie generowało się za każdym razem
         // const oneRegionOneDate = racing.filter(array => array.region === region && array.date >= dateMin && array.date <= dateMax)
         // const allDateOneRegion = racing.filter(array => array.date && array.region === region)
         // const allRegionOneDate = racing.filter(array => array.date >= dateMin && array.date <= dateMax && array.region)
@@ -203,6 +255,10 @@ class Previews extends Component {
                             year={year}
                             region={region}
                             disabled={disabled}
+                            check42km={this.state.check42km}
+                            check21km={this.state.check21km}
+                            check10km={this.state.check10km}
+                            checked={this.handleCheck}
                         />
                         <div>
                             <PreviewsArrow icon={classIcon}

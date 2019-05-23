@@ -12,7 +12,7 @@
             "records": "http://online.datasport.pl/zapisy/portal/zawody.php?zawody=4451",
             "fullDate": "15.06.2019 godz. 22:00",
             "place": "Stadion Olimpijski",
-            "distance": "21,0975km",
+            "distance": "21km",
             "limit": "13.000 osób - zapisy zakończone",
             "route": "po ulicach Wrocławia na jednej pętli",
             "payment": {
@@ -35,7 +35,7 @@
             "records": "https://online.datasport.pl/zapisy/portal/zawody.php?zawody=4384",
             "fullDate": "15.06.2019 godz. 22:00",
             "place": "Stadion Olimpijski",
-            "distance": "21,0975km",
+            "distance": "21km",
             "limit": "13.000 osób",
             "route": "po ulicach Wrocławia na jednej pętli",
             "payment": {
@@ -58,7 +58,7 @@
             "records": "https://online.datasport.pl/zapisy/portal/zawody.php?zawody=4384",
             "fullDate": "15.06.2019 godz. 22:00",
             "place": "Stadion Olimpijski",
-            "distance": "21,0975km",
+            "distance": "21km",
             "limit": "13.000 osób",
             "route": "po ulicach Wrocławia na jednej pętli",
             "payment": {
@@ -97,7 +97,7 @@
             "records": "https://online.datasport.pl/zapisy/portal/zawody.php?zawody=4510",
             "fullDate": "15.06.2019 godz. 22:00",
             "place": "2miejsce staru z ulicą",
-            "distance": "21.097km",
+            "distance": "21km",
             "limit": "500",
             "route": "2opis trasy",
             "payment": {
@@ -120,7 +120,7 @@
             "records": "http://www.wp.com",
             "fullDate": "15.06.2019 godz. 22:00",
             "place": "2miejsce staru z ulicą",
-            "distance": "21km",
+            "distance": "42km",
             "limit": "500",
             "route": "2opis trasy",
             "payment": {
@@ -143,7 +143,7 @@
             "records": "https://rejestracja.maratonwarszawski.com/pl/",
             "fullDate": "15.06.2019 godz. 22:00",
             "place": "2miejsce staru z ulicą",
-            "distance": "21km",
+            "distance": "42km",
             "limit": "500",
             "route": "2opis trasy",
             "payment": {
@@ -166,7 +166,7 @@
             "records": "http://www.wp.com",
             "fullDate": "15.06.2019 godz. 22:00",
             "place": "2miejsce staru z ulicą",
-            "distance": "21km",
+            "distance": "42km",
             "limit": "500",
             "route": "2opis trasy",
             "payment": {
@@ -212,7 +212,7 @@
             "records": "https://runner.marathon.poznan.pl/run/join/4/choose",
             "fullDate": "15.06.2019 godz. 22:00",
             "place": "2miejsce staru z ulicą",
-            "distance": "21km",
+            "distance": "42km",
             "limit": "500",
             "route": "2opis trasy",
             "payment": {
@@ -275,13 +275,13 @@
             "city": "Henryków",
             "date": "2019-11-01",
             "region": "dolnośląskie",
-            "description": "5 RST Półmaraton Swidnicki",
+            "description": "10km Henryków",
             "webOrganizer": "http://polmaraton.swidnica.pl/",
             "regulations": "http://www.wp.com",
             "records": "https://runner.marathon.poznan.pl/run/join/4/choose",
             "fullDate": "15.06.2019 godz. 22:00",
             "place": "2miejsce staru z ulicą",
-            "distance": "21km",
+            "distance": "10km",
             "limit": "500",
             "route": "2opis trasy",
             "payment": {
@@ -298,7 +298,7 @@
             "city": "Kołobrzeg",
             "date": "2019-08-17",
             "region": "zachodniopomorskie",
-            "description": "5 RST Półmaraton Swidnicki",
+            "description": "5 RST Półmaraton Kołobrzeg",
             "webOrganizer": "http://polmaraton.swidnica.pl/",
             "regulations": "http://www.wp.com",
             "records": "https://runner.marathon.poznan.pl/run/join/4/choose",
@@ -321,13 +321,13 @@
             "city": "Brzeg",
             "date": "2019-06-18",
             "region": "opolskie",
-            "description": "5 RST Półmaraton Swidnicki",
+            "description": "Nona dycha",
             "webOrganizer": "http://polmaraton.swidnica.pl/",
             "regulations": "http://www.wp.com",
             "records": "https://runner.marathon.poznan.pl/run/join/4/choose",
             "fullDate": "15.06.2019 godz. 22:00",
             "place": "2miejsce staru z ulicą",
-            "distance": "21km",
+            "distance": "10km",
             "limit": "500",
             "route": "2opis trasy",
             "payment": {
@@ -396,7 +396,7 @@
             "records": "http://online.datasport.pl/zapisy/portal/zawody.php?zawody=4451",
             "fullDate": "15.06.2019 godz. 22:00",
             "place": "Stadion Olimpijski",
-            "distance": "21,0975km",
+            "distance": "21km",
             "limit": "13.000 osób - zapisy zakończone",
             "route": "po ulicach Wrocławia na jednej pętli",
             "payment": {
@@ -419,7 +419,7 @@
             "records": "http://online.datasport.pl/zapisy/portal/zawody.php?zawody=4451",
             "fullDate": "15.06.2019 godz. 22:00",
             "place": "Stadion Olimpijski",
-            "distance": "21,0975km",
+            "distance": "21km",
             "limit": "13.000 osób - zapisy zakończone",
             "route": "po ulicach Wrocławia na jednej pętli",
             "payment": {
@@ -442,7 +442,7 @@
             "records": "http://online.datasport.pl/zapisy/portal/zawody.php?zawody=4451",
             "fullDate": "15.06.2019 godz. 22:00",
             "place": "Stadion Olimpijski",
-            "distance": "21,0975km",
+            "distance": "21km",
             "limit": "13.000 osób - zapisy zakończone",
             "route": "po ulicach Wrocławia na jednej pętli",
             "payment": {
@@ -465,7 +465,7 @@
             "records": "http://online.datasport.pl/zapisy/portal/zawody.php?zawody=4451",
             "fullDate": "15.06.2019 godz. 22:00",
             "place": "Stadion Olimpijski",
-            "distance": "21,0975km",
+            "distance": "21km",
             "limit": "13.000 osób - zapisy zakończone",
             "route": "po ulicach Wrocławia na jednej pętli",
             "payment": {
