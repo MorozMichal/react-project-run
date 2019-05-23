@@ -177,7 +177,7 @@ class Previews extends Component {
                 this.setState({
                     racingMonth: allDateAllRegion,
                 })
-    )
+
             }
 
             else if (prevState.check10km !== this.state.check10km && this.state.check10km === false && this.state.check21km === true && this.state.check42km === true) {
