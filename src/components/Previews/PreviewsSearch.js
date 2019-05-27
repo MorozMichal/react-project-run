@@ -8,7 +8,6 @@ const PreviewsSearch = (props) => {
                 <select name="month" value={props.month} onChange={props.inputMonth}>
                     <option value="00">Najbliższe</option>
                     <option disabled>----------</option>
-
                     <option value="01">Styczeń</option>
                     <option value="02">Luty</option>
                     <option value="03">Marzec</option>
@@ -47,11 +46,11 @@ const PreviewsSearch = (props) => {
                     <option value="zachodniopomorskie">Zachodniopomorskie</option>
                 </select>
             </div>
-            <div className="checkbox">
+            {/* <div className="checkbox">
                 <label>42km<input name="check42km" type="checkbox" onChange={props.checked} checked={props.check42km} /></label>
                 <label>21km<input name="check21km" type="checkbox" onChange={props.checked} checked={props.check21km} /></label>
                 <label>10km<input name="check10km" type="checkbox" onChange={props.checked} checked={props.check10km} /></label>
-            </div>
+            </div> */}
         </div>
 
     )
