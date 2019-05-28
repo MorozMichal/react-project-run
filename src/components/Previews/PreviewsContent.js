@@ -14,8 +14,11 @@ import Kolobrzeg from '../../img/city/kolobrzeg.png'
 import Henrykow from '../../img/city/henrykow.png'
 import Jelczlaskowice from '../../img/city/jelczlaskowice.png'
 import Szklarskaporeba from '../../img/city/szklarskaporeba.png'
+import Jaroslawiec from '../../img/city/jaroslawiec.png'
 
-const fotoArray = [Szczecin, Olawa, Wroclaw, Walbrzych, Pila, Warszawa, Krakow, Katowice, Poznan, Swidnica, Brzeg, Kolobrzeg, Henrykow, Jelczlaskowice, Szklarskaporeba];
+import Dolnoslaskie from '../../img/region/dolnoslaskie.png'
+
+const fotoArray = [Szczecin, Olawa, Wroclaw, Walbrzych, Pila, Warszawa, Krakow, Katowice, Poznan, Swidnica, Brzeg, Kolobrzeg, Henrykow, Jelczlaskowice, Szklarskaporeba, Jaroslawiec];
 
 const PreviewsContent = (props) => {
 
@@ -41,12 +44,18 @@ const PreviewsContent = (props) => {
             <div style={{
                 display: "flex"
             }}>
+                <div style={{
+                    flexBasis: "25%",
+                    alignSelf: "center"
+                }}>
+                    <img className="animation-previews-img" src={Dolnoslaskie} alt={`gołdo miasta ${run.city}`} />
+                </div>
 
                 <div style={{
-                    flexBasis: "75%"
+                    flexBasis: "50%"
                 }}>
                     <p className="preview-content-city">{run.city} </p>
-                    <p className="preview-content-date">{run.date.substring(8, 10)}.{run.date.substring(5, 7)}.{run.date.substring(0, 4)}</p> {/* zamiana formatu daty z tej z JSON 2019-02-12 na 12.02.2019 */}
+                    <p className="preview-content-date">{run.date.substring(8, 10)}.{run.date.substring(5, 7)}.{run.date.substring(0, 4)}r.</p> {/* zamiana formatu daty z tej z JSON 2019-02-12 na 12.02.2019 */}
                     <p className="preview-content-description">{run.description}</p>
 
                 </div>
@@ -58,30 +67,42 @@ const PreviewsContent = (props) => {
                     <img className="animation-previews-img" src={fotoCity} alt={`gołdo miasta ${run.city}`} />
                 </div>
             </div>
-            {run.webOrganizer && <p><a href={`${run.webOrganizer}`} rel="noopener">Strona organizatora</a></p>}
-            {run.regulations && <p><a href={`${run.regulations}`} rel="noopener">Regulamin</a></p>}
-            {run.records && <p><a href={`${run.records}`} rel="noopener">Zapisy</a></p>}
+
+
+            <div className="preview-content-links">
+                {run.webOrganizer && <div><a href={`${run.webOrganizer}`} rel="noopener">Strona organizatora</a></div>}
+                {run.regulations && <div><a href={`${run.regulations}`} rel="noopener">Regulamin</a></div>}
+                {run.records && <div><a href={`${run.records}`} rel="noopener">Zapisy</a></div>}
+            </div>
+
 
             {run.fullDate && <div className="preview-content-wraper-item">
                 <div><i className="fas fa-calendar-alt"></i></div>
                 <div>{run.fullDate}</div>
             </div>}
+
             {run.place && <div className="preview-content-wraper-item">
                 <div><i className="fas fa-map-marker-alt"></i></div>
                 <div>{run.place}</div>
             </div>}
+
             {run.distance && <div className="preview-content-wraper-item">
                 <div><i className="fas fa-route"></i></div>
                 <div>{run.distance}</div>
             </div>}
-            {run.limit && <div className="preview-content-wraper-item">
-                <div><i className="far fa-check-square"></i></div>
-                <div>{run.limit}</div>
-            </div>}
+
+
+
             {run.route && <div className="preview-content-wraper-item">
                 <div><i className="fas fa-road"></i></div>
                 <div>{run.route}</div>
             </div>}
+
+            {run.limit && <div className="preview-content-wraper-item">
+                <div><i className="far fa-check-square"></i></div>
+                <div>{run.limit}</div>
+            </div>}
+
             {run.payment && <div className="preview-content-wraper-item">
                 <div><i className="far fa-money-bill-alt"></i></div>
                 <div>
@@ -92,6 +113,20 @@ const PreviewsContent = (props) => {
                     {run.payment.payment5 && <p>{run.payment.payment5}</p>}
                 </div>
             </div>}
+
+            {run.bonus && <div className="preview-content-wraper-item">
+                <div><i className="far fa-money-bill-alt"></i></div>
+                <div>
+                    {run.bonus.description && <p>{run.bonus.description}</p>}
+                    {run.bonus.bonus1 && <p>{run.bonus.bonus1}</p>}
+                    {run.bonus.bonus2 && <p>{run.bonus.bonus2}</p>}
+                    {run.bonus.bonus3 && <p>{run.bonus.bonus3}</p>}
+                    {run.bonus.bonus4 && <p>{run.bonus.bonus4}</p>}
+                    {run.bonus.bonus5 && <p>{run.bonus.bonus5}</p>}
+                </div>
+            </div>}
+
+
         </div>
     ))
     return (

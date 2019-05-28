@@ -73,8 +73,9 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wraper-item div:nth-child(1) i {
+  color: rgba(0, 0, 0, 0.5);
   display: block;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wraper-item div:nth-child(2) {
@@ -92,19 +93,50 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-city {
-  font-size: 2rem;
+  font-size: 1.8rem;
   padding: 10px 0;
   letter-spacing: 3px;
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-date,
 .section-previews .section-previews-content .preview-content .preview-content-description {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 5px 0;
 }
 
 .section-previews .section-previews-content .preview-content p:nth-child(1) {
   font-weight: 900;
+}
+
+.section-previews .section-previews-content .preview-content .preview-content-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section-previews .section-previews-content .preview-content .preview-content-links div {
+  border-top: 2px solid black;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  margin: 0.5rem 0;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.section-previews .section-previews-content .preview-content .preview-content-links div a {
+  display: block;
+  color: black;
+  letter-spacing: 1px;
+  text-decoration: none;
+  padding: 0.5rem 0;
+}
+
+.section-previews .section-previews-content .preview-content .preview-content-links div:hover {
+  background-color: rgba(210, 210, 210, 0.5);
 }
 
 .section-previews .section-previews-content .preview-content p {
@@ -116,7 +148,7 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content img {
-  width: 30%;
+  width: 25%;
 }
 
 .section-previews .section-previews-content .animation-preview-content {
@@ -149,24 +181,34 @@ body {
 }
 
 .section-previews .section-previews-racing .section-previews-search {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-preferred-size: 10%;
       flex-basis: 10%;
   background-color: rgba(210, 210, 210, 0.7);
   padding: 10px 0px;
 }
 
-.section-previews .section-previews-racing .section-previews-search select {
+.section-previews .section-previews-racing .section-previews-search .select {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.section-previews .section-previews-racing .section-previews-search .select select {
   padding: 10px 0px;
   height: 40px;
 }
 
-.section-previews .section-previews-racing .section-previews-search select:nth-child(1) {
+.section-previews .section-previews-racing .section-previews-search .select select:nth-child(1) {
   font-weight: bold;
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
@@ -174,19 +216,25 @@ body {
   letter-spacing: 1px;
 }
 
-.section-previews .section-previews-racing .section-previews-search select:nth-child(2) {
+.section-previews .section-previews-racing .section-previews-search .select select:nth-child(2) {
   font-weight: bold;
   -ms-flex-preferred-size: 15%;
       flex-basis: 15%;
   text-align: center;
 }
 
-.section-previews .section-previews-racing .section-previews-search select:nth-child(3) {
+.section-previews .section-previews-racing .section-previews-search .select select:nth-child(3) {
   font-weight: bold;
   -ms-flex-preferred-size: 40%;
       flex-basis: 40%;
   text-align: center;
   margin-right: 20px;
+}
+
+.section-previews .section-previews-racing .section-previews-search .checkbox {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .section-previews .section-previews-racing div {
