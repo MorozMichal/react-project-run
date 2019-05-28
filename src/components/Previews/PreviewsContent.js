@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Szczecin from '../../img/city/szczecin.png';
 import Olawa from '../../img/city/olawa.png'
 import Wroclaw from '../../img/city/wroclaw.png'
@@ -15,14 +16,42 @@ import Henrykow from '../../img/city/henrykow.png'
 import Jelczlaskowice from '../../img/city/jelczlaskowice.png'
 import Szklarskaporeba from '../../img/city/szklarskaporeba.png'
 import Jaroslawiec from '../../img/city/jaroslawiec.png'
+import Bydgoszcz from '../../img/city/bydgoszcz.png';
+import Lublin from '../../img/city/lublin.png';
+import Gorzowwielkopolski from '../../img/city/gorzowwielkopolski.png';
+import Lodz from '../../img/city/lodz.png';
+import Rzeszow from '../../img/city/rzeszow.png';
+import Bialystok from '../../img/city/bialystok.png';
+import Gdansk from '../../img/city/gdansk.png';
+import Kielce from '../../img/city/kielce.png';
+import Elblag from '../../img/city/elblag.png'
+
 
 import Dolnoslaskie from '../../img/region/dolnoslaskie.png'
+import Kujawskopomorskie from '../../img/region/kujawskopomorskie.png'
+import Lodzkie from '../../img/region/lodzkie.png'
+import Lubelskie from '../../img/region/lubelskie.png'
+import Lubuskie from '../../img/region/lubuskie.png'
+import Malopolskie from '../../img/region/malopolskie.png'
+import Mazowieckie from '../../img/region/mazowieckie.png'
+import Opolskie from '../../img/region/opolskie.png'
+import Podkarpackie from '../../img/region/podkarpackie.png'
+import Podlaskie from '../../img/region/podlaskie.png'
+import Pomorskie from '../../img/region/pomorskie.png'
+import Slaskie from '../../img/region/slaskie.png'
+import Swietokrzyskie from '../../img/region/swietokrzyskie.png'
+import Warminskomazurskie from '../../img/region/warminskomazurskie.png'
+import Wielkopolskie from '../../img/region/wielkopolskie.png'
+import Zachodniopomorskie from '../../img/region/zachodniopomorskie.png'
 
-const fotoArray = [Szczecin, Olawa, Wroclaw, Walbrzych, Pila, Warszawa, Krakow, Katowice, Poznan, Swidnica, Brzeg, Kolobrzeg, Henrykow, Jelczlaskowice, Szklarskaporeba, Jaroslawiec];
+const CityImagesArray = [Szczecin, Olawa, Wroclaw, Walbrzych, Pila, Warszawa, Krakow, Katowice, Poznan, Swidnica, Brzeg, Kolobrzeg, Henrykow, Jelczlaskowice, Szklarskaporeba, Jaroslawiec, Bydgoszcz, Lublin, Gorzowwielkopolski, Lodz, Rzeszow, Bialystok, Gdansk, Kielce, Elblag   ];
+
+const RegionImagesArray = [Dolnoslaskie,Kujawskopomorskie, Lodzkie, Lubelskie,Lubuskie, Malopolskie, Mazowieckie,Opolskie, Podkarpackie, Podlaskie,Pomorskie, Slaskie, Swietokrzyskie, Warminskomazurskie, Wielkopolskie, Zachodniopomorskie    ]
 
 const PreviewsContent = (props) => {
 
-    const string = fotoArray.toString();
+    const stringCity = CityImagesArray.toString();
+    const stringRegion = RegionImagesArray.toString();
 
     const City = props.arrayContent.map(run => run.city).toString().toLowerCase().replace(/ą/g, 'a').replace(/Ą/g, 'A')
         .replace(/ć/g, 'c').replace(/Ć/g, 'C')
@@ -35,9 +64,25 @@ const PreviewsContent = (props) => {
         .replace(/ź/g, 'z').replace(/Ź/g, 'Z')
         .replace(/-/g, '').replace(/ /g, '');
 
-    const index = string.indexOf(`/${City}`)
-    const wycinek = string.substring(index - 13, index + City.length + 14)
-    const fotoCity = fotoArray.filter(foto => foto === `${wycinek}`);
+    const Region = props.arrayContent.map(run => run.region).toString().toLowerCase().replace(/ą/g, 'a').replace(/Ą/g, 'A')
+        .replace(/ć/g, 'c').replace(/Ć/g, 'C')
+        .replace(/ę/g, 'e').replace(/Ę/g, 'E')
+        .replace(/ł/g, 'l').replace(/Ł/g, 'L')
+        .replace(/ń/g, 'n').replace(/Ń/g, 'N')
+        .replace(/ó/g, 'o').replace(/Ó/g, 'O')
+        .replace(/ś/g, 's').replace(/Ś/g, 'S')
+        .replace(/ż/g, 'z').replace(/Ż/g, 'Z')
+        .replace(/ź/g, 'z').replace(/Ź/g, 'Z')
+        .replace(/-/g, '').replace(/ /g, '');
+
+    const indexCity = stringCity.indexOf(`/${City}`)
+    const indexRegion = stringRegion.indexOf(`/${Region}`)
+
+    const wycinekCity = stringCity.substring(indexCity - 13, indexCity + City.length + 14)
+    const wycinekRegion = stringRegion.substring(indexRegion - 13, indexRegion + Region.length + 14)
+
+    const cityImage = CityImagesArray.filter(foto => foto === `${wycinekCity}`);
+    const regionImage = RegionImagesArray.filter(foto => foto === `${wycinekRegion}`);
 
     const oneRacing = props.arrayContent.map(run => (
         <div className="preview-content animation-preview-content" key={run.id} >
@@ -48,13 +93,16 @@ const PreviewsContent = (props) => {
                     flexBasis: "25%",
                     alignSelf: "center"
                 }}>
-                    <img className="animation-previews-img" src={Dolnoslaskie} alt={`gołdo miasta ${run.city}`} />
+                    <img style={{
+                        width: "45%"
+                    }} 
+                    className="animation-previews-img" src={regionImage} alt={`mapa wojewodztwa ${run.region}`} />
                 </div>
 
                 <div style={{
                     flexBasis: "50%"
                 }}>
-                    <p className="preview-content-city">{run.city} </p>
+                    <p className="preview-content-city">{run.city}</p>
                     <p className="preview-content-date">{run.date.substring(8, 10)}.{run.date.substring(5, 7)}.{run.date.substring(0, 4)}r.</p> {/* zamiana formatu daty z tej z JSON 2019-02-12 na 12.02.2019 */}
                     <p className="preview-content-description">{run.description}</p>
 
@@ -64,7 +112,7 @@ const PreviewsContent = (props) => {
                     flexBasis: "25%",
                     alignSelf: "center"
                 }}>
-                    <img className="animation-previews-img" src={fotoCity} alt={`gołdo miasta ${run.city}`} />
+                    <img className="animation-previews-img" src={cityImage} alt={`gołdo miasta ${run.city}`} />
                 </div>
             </div>
 

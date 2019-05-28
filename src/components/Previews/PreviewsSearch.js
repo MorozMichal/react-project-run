@@ -40,7 +40,7 @@ const PreviewsSearch = (props) => {
                     <option value="podlaskie">Podlaskie</option>
                     <option value="pomorskie">Pomorskie</option>
                     <option value="śląskie">Śląskie</option>
-                    <option value="świętorzyskie">Świętorzyskie</option>
+                    <option value="świętokrzyskie">Świętokrzyskie</option>
                     <option value="warmińsko-mazurskie">Warmińsko-Mazurskie</option>
                     <option value="wielkopolskie">Wielkopolskie</option>
                     <option value="zachodniopomorskie">Zachodniopomorskie</option>
