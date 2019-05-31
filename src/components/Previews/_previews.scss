@@ -46,6 +46,7 @@
                     flex-basis: 50%;
 
                     .preview-content-city {
+                        font-weight: 900;
                         font-size: 1.8rem;
                         letter-spacing: 3px;
                     }
@@ -70,149 +71,112 @@
                 }
             }
 
-            .preview-content-wraper-item {
-                display: flex;
-                padding: 10px 0;
+            .preview-content-wrapper-run {
+                display: grid;
+                // height: 80vh;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 10px;
+                padding: 20px 20px;
 
-                div:nth-child(1) {
-                    flex-basis: 25%;
-                    font-weight: bold;
-                    align-self: center;
+                .preview-content-run-place,
+                .preview-content-run-route,
+                .preview-content-run-payment,
+                .preview-content-run-bonus {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 1rem;
+                    background-color: rgba(182, 167, 167, 0.2)
+                }
+
+                .preview-content-run-place,
+                .preview-content-run-bonus {
+                    grid-column: span 2 / auto;
+                }
+
+                .preview-content-run-route,
+                .preview-content-run-payment {
+                    grid-row: span 2 / auto;
+                }
+
+                .preview-content-run-place {
+                    border-radius: 30px 30px 0 30px;
+
+                    p:nth-child(1) {
+                        font-size: 1.3rem;
+                        font-weight: 900;
+                        padding-bottom: 1rem;
+                    }
+
+                    p:nth-child(2) {
+                        font-weight: 900;
+                        text-transform: uppercase;
+                    }
+
+                    span {
+                        display: block;
+                        font-size: 1.2rem;
+                    }
 
                     i {
+                        font-size: 2.5rem;
                         color: rgba(0, 0, 0, 0.5);
-                        font-size: 1.5rem;
-
+                        padding-bottom: 1rem;
                     }
-                }
-
-                div:nth-child(2) {
-                    flex-basis: 75%;
-                    align-content: center;
-                    align-self: center;
-
-                }
-            }
-
-            p:nth-child(1) {
-                font-weight: 900;
-            }
-
-            .preview-content-links {
-                display: flex;
-                justify-content: space-around;
-
-                div {
-                    border: 1px solid rgba(0, 0, 0, 0.3);
-                    background-color: rgba(0, 0, 0, 0.1);
-
-                    border-radius: 7px;
-                    margin: 10px;
-                    flex-basis: 23%;
-                    font-size: 0.8rem;
-                    font-weight: bold;
-                    text-transform: uppercase;
-
-                    a {
-                        display: block;
-                        color: rgba(0, 0, 0, 0.6);
-                        letter-spacing: 1px;
-                        text-decoration: none;
-                        padding: 0.5rem 0;
-                    }
-                }
-
-                div:hover {
-                    background-color: rgba(210, 210, 210, 0.5);
 
                 }
 
-                div:hover a {
-                    color: black;
-
-                }
-            }
-
-            p {
-                line-height: 1.5rem;
-
-                a {
-                    text-decoration: none;
-                }
-            }
-
-            .test {
-                display: flex;
-                height: 70vh;
-                flex-wrap: wrap;
-                justify-content: space-around;
-                margin: 30px 0;
-                padding: 0 30px;
-
-                .test1,
-                .test2,
-                .test3,
-                .test4,
-                .test5,
-                .test6,
-                .test7,
-                .test8,
-                .test9 {
-                    flex-basis: 30%;
-                    height: 20vh;
-                    background-color: rgba(182, 167, 167, 0.2);
-                }
-
-                .test1 {
-                    border-radius: 30px 30px 0 30px;
-                    font-size: 1.5rem;
-
-                    .preview-content-wraper-item {
-                        display: flex;
-                        flex-direction: column;
-
-                    }
-                }
-
-                .test2 {
-                    border-radius: 30px 30px 30px 30px;
-                    font-size: 1.5rem;
-
-                    .preview-content-wraper-item {
-                        display: flex;
-                        flex-direction: column;
-
-                    }
-                }
-
-                .test3 {
+                .preview-content-run-route {
                     border-radius: 30px 30px 30px 0;
-                    font-size: 1.5rem;
 
-                    .preview-content-wraper-item {
-                        display: flex;
-                        flex-direction: column;
+                    p:nth-child(1) {
+                        text-transform: uppercase;
+                        font-weight: 900;
+                        padding-bottom: 1rem;
+                        color: rgba(0, 0, 0, 0.5)
+                    }
 
+                    p:nth-child(2) {
+                        font-size: 2rem;
+                        font-weight: 900;
+
+                    }
+
+                    p:nth-child(3) {
+                        font-size: 3rem;
+                        padding: 20px 0;
+                        color: rgba(0, 0, 0, 0.5)
                     }
 
                 }
 
-                .test4 {
-                    border-radius: 30px 30px 30px 30px;
+                .preview-content-run-payment {
+                    border-radius: 30px 0 30px 30px;
+
+                    p:nth-child(1) {
+                        color: rgba(0, 0, 0, 0.5);
+                        font-weight: 900;
+                        text-transform: uppercase;
+
+                    }
+
+                    i {
+                        font-size: 2.5rem;
+                        color: rgba(0, 0, 0, 0.5);
+                        // padding-bottom: 1rem;
+                    }
 
                 }
 
-                .test5 {
+                .preview-content-run-links {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-around;
                     border-radius: 4px;
-                    background-color: transparent;
 
                     div {
                         border: 1px solid rgba(0, 0, 0, 0.3);
                         background-color: rgba(0, 0, 0, 0.1);
-
                         border-radius: 7px;
                         font-size: 0.8rem;
                         font-weight: bold;
@@ -226,65 +190,29 @@
                             padding: 0.5rem 0;
                         }
 
-
                     }
 
                     div:hover {
                         background-color: rgba(210, 210, 210, 0.5);
-
                     }
 
                     div:hover a {
                         color: black;
-
                     }
                 }
 
-                .test6 {
-                    border-radius: 30px 30px 30px 30px;
-
-                    .preview-content-wraper-item {
-                        display: flex;
-                        flex-direction: column;
-
-                    }
-                }
-
-                .test7 {
-                    border-radius: 30px 0 30px 30px;
-
-                    .preview-content-wraper-item {
-                        display: flex;
-                        flex-direction: column;
-
-                    }
-                }
-
-                .test8 {
-                    border-radius: 30px 30px 30px 30px;
-
-                    .preview-content-wraper-item {
-                        display: flex;
-                        flex-direction: column;
-
-                    }
-
-                }
-
-                .test9 {
+                .preview-content-run-bonus {
                     border-radius: 0 30px 30px 30px;
 
-                    .preview-content-wraper-item {
-                        display: flex;
-                        flex-direction: column;
+                    p:nth-child(1) {
+                        color: rgba(0, 0, 0, 0.5);
+                        font-weight: 900;
+                        text-transform: uppercase;
 
                     }
-
                 }
 
-
             }
-
 
         }
 
@@ -440,10 +368,6 @@
 
     }
 
-    // .animation-previews-img {
-    //     animation: animation-previews-img 5s linear infinite;
-    // }
-
     .animation-previews-button {
         animation: animation-previews-button 1.5s linear infinite;
     }
@@ -470,16 +394,6 @@
 
         100% {
             opacity: 1;
-        }
-    }
-
-    @keyframes animation-previews-img {
-        0% {
-            transform: rotateY(0deg);
-        }
-
-        100% {
-            transform: rotateY(360deg);
         }
     }
 
