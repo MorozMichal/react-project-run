@@ -17,18 +17,8 @@ class Previews extends Component {
         year: yearNow,
         region: "all",
         disabled: true,
-        // check42km: true,
-        // check21km: true,
-        // check10km: true,
 
     }
-
-    // handleCheck = (e) => {
-    //     this.setState({
-    //         [e.target.name]: e.target.checked
-    //     })
-
-    // }
 
     componentDidMount() {
         fetch('racing.json') //in public folder
@@ -186,10 +176,6 @@ class Previews extends Component {
                             year={year}
                             region={region}
                             disabled={disabled}
-                        // check42km={this.state.check42km}
-                        // check21km={this.state.check21km}
-                        // check10km={this.state.check10km}
-                        // checked={this.handleCheck}
                         />
                         <div>
                             <PreviewsArrow

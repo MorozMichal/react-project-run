@@ -53,7 +53,8 @@ const PreviewsContent = (props) => {
     const stringCity = CityImagesArray.toString();
     const stringRegion = RegionImagesArray.toString();
 
-    const City = props.arrayContent.map(run => run.city).toString().toLowerCase().replace(/ą/g, 'a').replace(/Ą/g, 'A')
+    const City = props.arrayContent.map(run => run.city).toString().toLowerCase()
+        .replace(/ą/g, 'a').replace(/Ą/g, 'A')
         .replace(/ć/g, 'c').replace(/Ć/g, 'C')
         .replace(/ę/g, 'e').replace(/Ę/g, 'E')
         .replace(/ł/g, 'l').replace(/Ł/g, 'L')
@@ -64,7 +65,8 @@ const PreviewsContent = (props) => {
         .replace(/ź/g, 'z').replace(/Ź/g, 'Z')
         .replace(/-/g, '').replace(/ /g, '');
 
-    const Region = props.arrayContent.map(run => run.region).toString().toLowerCase().replace(/ą/g, 'a').replace(/Ą/g, 'A')
+    const Region = props.arrayContent.map(run => run.region).toString().toLowerCase()
+        .replace(/ą/g, 'a').replace(/Ą/g, 'A')
         .replace(/ć/g, 'c').replace(/Ć/g, 'C')
         .replace(/ę/g, 'e').replace(/Ę/g, 'E')
         .replace(/ł/g, 'l').replace(/Ł/g, 'L')
@@ -127,11 +129,11 @@ const PreviewsContent = (props) => {
                 </div>
                 <div className="preview-content-run-bonus">
                     {run.bonus.description && <p>{run.bonus.description}</p>}
-                    {run.bonus.bonus1 && <p>{run.bonus.bonus1}</p>}
-                    {run.bonus.bonus2 && <p>{run.bonus.bonus2}</p>}
-                    {run.bonus.bonus3 && <p>{run.bonus.bonus3}</p>}
-                    {run.bonus.bonus4 && <p>{run.bonus.bonus4}</p>}
-                    {run.bonus.bonus5 && <p>{run.bonus.bonus5}</p>}
+                    {run.bonus.bonus1 && <p><i className="fas fa-check"></i>{run.bonus.bonus1}</p>}
+                    {run.bonus.bonus2 && <p><i className="fas fa-check"></i>{run.bonus.bonus2}</p>}
+                    {run.bonus.bonus3 && <p><i className="fas fa-check"></i>{run.bonus.bonus3}</p>}
+                    {run.bonus.bonus4 && <p><i className="fas fa-check"></i>{run.bonus.bonus4}</p>}
+                    {run.bonus.bonus5 && <p><i className="fas fa-check"></i>{run.bonus.bonus5}</p>}
                 </div>
             </div>
         </div>

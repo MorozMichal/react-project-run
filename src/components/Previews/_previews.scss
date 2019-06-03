@@ -5,7 +5,7 @@
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-    // overflow: hidden;
+    overflow: hidden;
 
     @media screen and (min-width: 1024px) {
         background-image: url(../img/background/previews_full.jpg);
@@ -154,17 +154,28 @@
                     border-radius: 30px 0 30px 30px;
 
                     p:nth-child(1) {
-                        color: rgba(0, 0, 0, 0.5);
-                        font-weight: 900;
                         text-transform: uppercase;
-
+                        font-weight: 900;
+                        padding-bottom: 1rem;
+                        color: rgba(0, 0, 0, 0.5)
                     }
 
-                    i {
-                        font-size: 2.5rem;
-                        color: rgba(0, 0, 0, 0.5);
-                        // padding-bottom: 1rem;
+                    p:nth-child(2) {
+                        font-weight: 900;
+                        font-size: 2rem;
                     }
+
+                    p:nth-child(3) {
+                        font-size: 3rem;
+                        padding: 10px 0;
+                        color: rgba(0, 0, 0, 0.5)
+                    }
+
+                    p:nth-child(4) {
+                        font-weight: 900;
+                        padding-bottom: 5px;
+                    }
+
 
                 }
 
@@ -205,10 +216,14 @@
                     border-radius: 0 30px 30px 30px;
 
                     p:nth-child(1) {
-                        color: rgba(0, 0, 0, 0.5);
-                        font-weight: 900;
                         text-transform: uppercase;
+                        font-weight: 900;
+                        padding-bottom: 1rem;
+                        color: rgba(0, 0, 0, 0.5)
+                    }
 
+                    i {
+                        padding-right: 10px;
                     }
                 }
 
@@ -227,7 +242,7 @@
         display: flex;
         flex-direction: column;
         transition: 1s;
-        // transform: translateX(90%);
+        transform: translateX(90%);
         align-self: start;
         height: 100vh;
 
