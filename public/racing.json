@@ -42,25 +42,25 @@
             "regulations": "http://www.biegpoplazy.pl/index.php/aktualnoci/bieg-po-plazy-lipiec/regulamin",
             "records": "https://online.datasport.pl/zapisy/portal/zawody.php?zawody=4663",
             "fullDate": "07.07.2019 godz. 12:00",
-            "place": "Stadion Olimpijski",
+            "place": "Jarosławiec ul. Nadmorska (główny deptak)",
             "distance": "15km",
-            "limit": "13.000 osób",
-            "route": "po ulicach Wrocławia na jednej pętli",
+            "limit": "800",
+            "route": "33% po piasku, 67% po asfalcie. Nawierzchnia asfaltowa, brukowa, betonowa, plażą kamienistą oraz piaszczystą.",
             "payment": {
-                "payment1": "według ilości zgłoszeń",
-                "payment2": "90zł - (1 - 4000)",
-                "payment3": "100zł - (4001 - 7000)",
-                "payment4": "120zł - (7001 - 10000)",
-                "payment5": "140zł - (10001 - 13000)",
+                "payment1": "według daty zgłoszenia",
+                "payment2": "40zł - (do 30 marca)",
+                "payment3": "50zł - (do 15 maja)",
+                "payment4": "60zł - (do 20 czerwca)",
+                "payment5": "80zł - (w Biurze Zawodów)",
                 "payment6": ""
             },
             "bonus": {
                 "description": "Imprezy towarzyszące",
-                "bonus1": "Bieg samorządowy",
-                "bonus2": "",
-                "bonus3": "",
-                "bonus4": "",
-                "bonus5": ""
+                "bonus1": "XXIX Ogólnopolskie Biegi Młodzieżowe",
+                "bonus2": "XXIV Ogólnopolski Bieg Samorządowy",
+                "bonus3": "VII Bieg Milusińskich",
+                "bonus4": "VII Rekreacyjny Bieg",
+                "bonus5": "VIII Mistrzostwa Straży Granicznej w Biegach Przełajowych"
             }
         },
         {

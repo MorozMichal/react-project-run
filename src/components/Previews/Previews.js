@@ -177,7 +177,7 @@ class Previews extends Component {
                             region={region}
                             disabled={disabled}
                         />
-                        <div>
+                        <div className="previews-racing">
                             <PreviewsArrow
                                 icon={classIcon}
                                 clickIcon={this.handleIcon}
