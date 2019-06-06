@@ -104,12 +104,13 @@ const PreviewsContent = (props) => {
             <div className="preview-content-wrapper-run">
                 <div className="preview-content-run-place">
                     <p>{run.fullDate}</p>
-                    <p><i className="fas fa-map-marker-alt"></i><span>{run.place}</span></p>
+                    <i className="fas fa-map-marker-alt"></i>
+                    <p>{run.place}</p>
                 </div>
                 <div className="preview-content-run-route">
                     <p>dystans</p>
                     <p>{run.distance}</p>
-                    <p><i className="fas fa-road"></i></p>
+                    <i className="fas fa-road"></i>
                     <p>{run.route}</p>
                 </div>
                 <div className="preview-content-run-payment">
