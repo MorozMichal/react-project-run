@@ -33,6 +33,13 @@ body {
   text-align: center;
 }
 
+@media screen and (min-width: 992px) {
+  .section-previews .section-previews-content {
+    -ms-flex-preferred-size: 65%;
+        flex-basis: 65%;
+  }
+}
+
 .section-previews .section-previews-content .preview-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,7 +57,14 @@ body {
   display: -ms-flexbox;
   display: flex;
   height: 10vh;
+  background-color: rgba(210, 210, 210, 0.5);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-content .preview-content .preview-content-header {
+    height: 20vh;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -64,6 +78,18 @@ body {
   display: none;
 }
 
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-map,
+  .section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-emblem {
+    display: block;
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-map,
   .section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-emblem {
@@ -75,9 +101,12 @@ body {
   }
 }
 
-.section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-map img,
-.section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-emblem img {
+.section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-map img {
   width: 35%;
+}
+
+.section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-emblem img {
+  width: 25%;
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-city {
@@ -86,6 +115,13 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-city {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -130,6 +166,18 @@ body {
   height: 90vh;
 }
 
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    padding: 5px;
+    height: 80vh;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .section-previews .section-previews-content .preview-content .preview-content-wrapper-run {
     display: -ms-grid;
@@ -148,13 +196,24 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 0 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-place,
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route,
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment,
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -167,10 +226,43 @@ body {
   }
 }
 
+.section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-place i,
+.section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route i,
+.section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment i,
+.section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus i {
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0.3rem 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-place i,
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route i,
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment i,
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus i {
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-place,
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus {
+    grid-column: span 2 / auto;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-place,
   .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus {
     grid-column: span 2 / auto;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route,
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment {
+    grid-row: span 2 / auto;
   }
 }
 
@@ -184,6 +276,12 @@ body {
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-place {
   -ms-flex-preferred-size: 15%;
       flex-basis: 15%;
+}
+
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-place {
+    border-radius: 30px 30px 0 30px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -205,20 +303,8 @@ body {
   }
 }
 
-.section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-place i {
-  font-size: 1.5rem;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-@media screen and (min-width: 1024px) {
-  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-place i {
-    font-size: 2.5rem;
-    padding-bottom: 1rem;
-  }
-}
-
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-place p:nth-child(3) {
-  font-size: .9rem;
+  font-size: .7rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -232,6 +318,12 @@ body {
       flex-basis: 25%;
 }
 
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route {
+    border-radius: 30px 30px 30px 0;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route {
     border-radius: 30px 30px 30px 0;
@@ -243,6 +335,7 @@ body {
   font-weight: 900;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.5);
+  padding-bottom: 0.5rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -266,32 +359,25 @@ body {
   }
 }
 
-.section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route i {
-  font-size: 1.5rem;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-@media screen and (min-width: 1024px) {
-  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route i {
-    font-size: 2.5rem;
-    color: rgba(0, 0, 0, 0.5);
-    padding-bottom: 1rem;
-  }
-}
-
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route p:nth-child(4) {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route p:nth-child(4) {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment {
-  -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
+  -ms-flex-preferred-size: 28%;
+      flex-basis: 28%;
+}
+
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment {
+    border-radius: 30px 0 30px 30px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -304,9 +390,9 @@ body {
   font-size: 0.6rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment p {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 }
 
@@ -315,6 +401,7 @@ body {
   font-weight: 900;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.5);
+  padding-bottom: 0.5rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -338,22 +425,10 @@ body {
   }
 }
 
-.section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment i {
-  font-size: 1.5rem;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-@media screen and (min-width: 1024px) {
-  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment i {
-    font-size: 2.5rem;
-    color: rgba(0, 0, 0, 0.5);
-    padding-bottom: 1rem;
-  }
-}
-
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment p:nth-child(4) {
   font-size: 0.7rem;
   font-weight: 900;
+  padding-bottom: 0.2rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -376,9 +451,16 @@ body {
   -webkit-box-ordinal-group: 9;
       -ms-flex-order: 8;
           order: 8;
-  -ms-flex-preferred-size: 15%;
-      flex-basis: 15%;
-  padding: 0 2rem;
+  -ms-flex-preferred-size: 12%;
+      flex-basis: 12%;
+}
+
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-links {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -391,12 +473,23 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-links div {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 50%;
   border: 1px solid rgba(0, 0, 0, 0.3);
   background-color: rgba(124, 118, 184, 0.4);
   border-radius: 7px;
-  font-size: 0.7rem;
+  font-size: 0.5rem;
   font-weight: 900;
   text-transform: uppercase;
+}
+
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-links div {
+    font-size: 0.6rem;
+    width: 90%;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -409,7 +502,7 @@ body {
   display: block;
   color: rgba(0, 0, 0, 0.6);
   text-decoration: none;
-  padding: 0.4rem 0;
+  padding: 0.2rem 0;
 }
 
 @media screen and (min-width: 1024px) {
@@ -431,6 +524,12 @@ body {
       flex-basis: 20%;
 }
 
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus {
+    border-radius: 0 30px 30px 30px;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus {
     border-radius: 0 30px 30px 30px;
@@ -438,12 +537,12 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus p {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus p {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 }
 
@@ -452,6 +551,7 @@ body {
   font-weight: 900;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.5);
+  padding-bottom: 0.5rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -464,7 +564,9 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus i {
+  font-size: 0.5rem;
   padding-right: 0.5rem;
+  padding-bottom: 0;
 }
 
 .section-previews .section-previews-content .animation-preview-content {
@@ -488,7 +590,7 @@ body {
   border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .section-previews .section-previews-racing {
     -webkit-transform: translateX(90%);
             transform: translateX(90%);
@@ -506,8 +608,17 @@ body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 576px) {
   .section-previews .section-previews-racing .section-previews-search {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .section-previews .section-previews-racing .section-previews-search {
+    -ms-flex-preferred-size: 10%;
+        flex-basis: 10%;
     background-color: rgba(210, 210, 210, 0.7);
     padding: 10px 0px;
   }
@@ -523,13 +634,18 @@ body {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  background-color: rgba(210, 210, 210, 0.7);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .section-previews .section-previews-racing .section-previews-search .select {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    background-color: transparent;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    width: 100%;
   }
 }
 
@@ -548,21 +664,34 @@ body {
   cursor: pointer;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 576px) {
   .section-previews .section-previews-racing .section-previews-search .select select {
+    -webkit-appearance: auto;
+       -moz-appearance: auto;
+            appearance: auto;
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .section-previews .section-previews-racing .section-previews-search .select select {
+    -webkit-appearance: auto;
+       -moz-appearance: auto;
+            appearance: auto;
+    font-size: 0.8rem;
     padding: 10px 0px;
   }
 }
 
 .section-previews .section-previews-racing .section-previews-search .select select:hover {
-  background-color: rgba(210, 210, 210, 0.8);
+  background-color: rgba(210, 210, 210, 0.1);
 }
 
 .section-previews .section-previews-racing .section-previews-search .select select:nth-child(1) {
   font-size: 0.6rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .section-previews .section-previews-racing .section-previews-search .select select:nth-child(1) {
     -ms-flex-preferred-size: 30%;
         flex-basis: 30%;
@@ -573,14 +702,14 @@ body {
   font-size: 0.6rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .section-previews .section-previews-racing .section-previews-search .select select:nth-child(2) {
     -ms-flex-preferred-size: 20%;
         flex-basis: 20%;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .section-previews .section-previews-racing .section-previews-search .select select:nth-child(3) {
     -ms-flex-preferred-size: 40%;
         flex-basis: 40%;
@@ -600,6 +729,20 @@ body {
           justify-content: center;
   -ms-flex-preferred-size: 90%;
       flex-basis: 90%;
+}
+
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-racing .previews-racing {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .section-previews .section-previews-racing .previews-racing {
+    -ms-flex-preferred-size: 90%;
+        flex-basis: 90%;
+  }
 }
 
 .section-previews .section-previews-racing .previews-racing .section-previews-banner {
@@ -647,7 +790,20 @@ body {
   background-color: rgba(210, 210, 210, 0.7);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-racing .previews-racing .section-previews-all {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 992px) {
   .section-previews .section-previews-racing .previews-racing .section-previews-all {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -676,14 +832,20 @@ body {
   text-align: center;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 576px) {
   .section-previews .section-previews-racing .previews-racing .section-previews-all .preview {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    height: calc(80vh/8);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .section-previews .section-previews-racing .previews-racing .section-previews-all .preview {
     padding: 0 5px;
     -ms-flex-preferred-size: 50%;
         flex-basis: 50%;
+    height: calc(90vh/8);
   }
 }
 
