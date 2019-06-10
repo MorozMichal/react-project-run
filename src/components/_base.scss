@@ -1,8 +1,12 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    // max-width: 1200px;
-    margin: 0 auto;
+html {
     font-size: 10px;
-    position: relative;
+    font-family: 'Roboto', sans-serif;
 
+    body {
+        font-family: 'Roboto', sans-serif;
+        // max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+
+    }
 }
