@@ -118,10 +118,12 @@ const PreviewsContent = (props) => {
                     <p>{run.limit}</p>
                     <p><i className="far fa-money-bill-alt"></i></p>
                     {run.payment.payment1 && <p>{run.payment.payment1}</p>}
-                    {run.payment.payment2 && <p>{run.payment.payment2}</p>}
-                    {run.payment.payment3 && <p>{run.payment.payment3}</p>}
-                    {run.payment.payment4 && <p>{run.payment.payment4}</p>}
-                    {run.payment.payment5 && <p>{run.payment.payment5}</p>}
+                    <ul>
+                        {run.payment.payment2 && <li>{run.payment.payment2}</li>}
+                        {run.payment.payment3 && <li>{run.payment.payment3}</li>}
+                        {run.payment.payment4 && <li>{run.payment.payment4}</li>}
+                        {run.payment.payment5 && <li>{run.payment.payment5}</li>}
+                    </ul>
                 </div>
                 <div className="preview-content-run-links">
                     {run.webOrganizer && <div><a href={`${run.webOrganizer}`} rel="noopener">Strona organizatora</a></div>}
@@ -130,11 +132,13 @@ const PreviewsContent = (props) => {
                 </div>
                 <div className="preview-content-run-bonus">
                     {run.bonus.description && <p>{run.bonus.description}</p>}
-                    {run.bonus.bonus1 && <p><i className="fas fa-check"></i>{run.bonus.bonus1}</p>}
-                    {run.bonus.bonus2 && <p><i className="fas fa-check"></i>{run.bonus.bonus2}</p>}
-                    {run.bonus.bonus3 && <p><i className="fas fa-check"></i>{run.bonus.bonus3}</p>}
-                    {run.bonus.bonus4 && <p><i className="fas fa-check"></i>{run.bonus.bonus4}</p>}
-                    {run.bonus.bonus5 && <p><i className="fas fa-check"></i>{run.bonus.bonus5}</p>}
+                    <ul>
+                        {run.bonus.bonus1 && <li>{run.bonus.bonus1}</li>}
+                        {run.bonus.bonus2 && <li>{run.bonus.bonus2}</li>}
+                        {run.bonus.bonus3 && <li>{run.bonus.bonus3}</li>}
+                        {run.bonus.bonus4 && <li>{run.bonus.bonus4}</li>}
+                        {run.bonus.bonus5 && <li>{run.bonus.bonus5}</li>}
+                    </ul>
                 </div>
             </div>
         </div>

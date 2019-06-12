@@ -5,10 +5,14 @@
           box-sizing: border-box;
 }
 
-body {
+html {
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+html body {
   font-family: 'Roboto', sans-serif;
   margin: 0 auto;
-  font-size: 10px;
   position: relative;
 }
 
@@ -28,8 +32,9 @@ body {
 }
 
 .section-previews .section-previews-content {
-  -ms-flex-preferred-size: 72%;
-      flex-basis: 72%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   text-align: center;
 }
 
@@ -56,7 +61,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 10vh;
   background-color: rgba(210, 210, 210, 0.5);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -82,19 +86,6 @@ body {
   .section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-map,
   .section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-emblem {
     display: block;
-    -ms-flex-preferred-size: 25%;
-        flex-basis: 25%;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-map,
-  .section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-emblem {
-    -ms-flex-preferred-size: 25%;
-        flex-basis: 25%;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -124,15 +115,9 @@ body {
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-city {
-    -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
-  }
-}
-
 .section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-city .preview-content-city {
-  font-size: 1.4rem;
+  font-size: 1.9rem;
+  padding: 0.2rem 0;
   font-weight: 900;
 }
 
@@ -144,7 +129,8 @@ body {
 
 .section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-city .preview-content-date,
 .section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-city .preview-content-description {
-  font-size: 0.8rem;
+  font-size: 1.4rem;
+  padding: 0.2rem 0;
 }
 
 @media screen and (min-width: 1024px) {
@@ -155,6 +141,10 @@ body {
   }
 }
 
+.section-previews .section-previews-content .preview-content .preview-content-header .preview-content-header-city .preview-content-description {
+  font-weight: 900;
+}
+
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -163,7 +153,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 90vh;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 @media screen and (min-width: 576px) {
@@ -230,9 +222,18 @@ body {
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route i,
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment i,
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus i {
-  font-size: 1.5rem;
-  color: rgba(0, 0, 0, 0.5);
-  padding: 0.3rem 0;
+  display: none;
+}
+
+@media screen and (min-width: 576px) {
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-place i,
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route i,
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment i,
+  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus i {
+    font-size: 1.6rem;
+    color: rgba(0, 0, 0, 0.5);
+    padding: 0.3rem 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -274,8 +275,9 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-place {
-  -ms-flex-preferred-size: 15%;
-      flex-basis: 15%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 @media screen and (min-width: 576px) {
@@ -291,8 +293,9 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-place p:nth-child(1) {
-  font-size: .9rem;
+  font-size: 1.6rem;
   font-weight: 900;
+  padding: 0.2rem 0;
 }
 
 @media screen and (min-width: 1024px) {
@@ -304,7 +307,8 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-place p:nth-child(3) {
-  font-size: .7rem;
+  font-size: 1.4rem;
+  padding: 0.2rem 0;
 }
 
 @media screen and (min-width: 1024px) {
@@ -314,8 +318,9 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route {
-  -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 @media screen and (min-width: 576px) {
@@ -331,11 +336,11 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route p:nth-child(1) {
-  font-size: 0.8rem;
+  font-size: 1.4rem;
   font-weight: 900;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.5);
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -348,8 +353,9 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route p:nth-child(2) {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 900;
+  padding-bottom: 1rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -360,7 +366,7 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-route p:nth-child(4) {
-  font-size: 0.6rem;
+  font-size: 1.4rem;
 }
 
 @media screen and (min-width: 992px) {
@@ -370,8 +376,9 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment {
-  -ms-flex-preferred-size: 28%;
-      flex-basis: 28%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 @media screen and (min-width: 576px) {
@@ -387,7 +394,8 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment p {
-  font-size: 0.6rem;
+  font-size: 1.4rem;
+  padding-bottom: 0.3rem;
 }
 
 @media screen and (min-width: 992px) {
@@ -397,11 +405,11 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment p:nth-child(1) {
-  font-size: 0.8rem;
+  font-size: 1.4rem;
   font-weight: 900;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.5);
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -414,8 +422,9 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment p:nth-child(2) {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 900;
+  padding-bottom: 1rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -426,9 +435,7 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment p:nth-child(4) {
-  font-size: 0.7rem;
   font-weight: 900;
-  padding-bottom: 0.2rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -436,6 +443,17 @@ body {
     font-weight: 900;
     padding-bottom: 0.2rem;
   }
+}
+
+.section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment ul {
+  list-style: square;
+}
+
+.section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-payment ul li {
+  font-size: 1.3rem;
+  margin-left: 1.5rem;
+  padding-bottom: 0.3rem;
+  text-align: left;
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-links {
@@ -451,8 +469,9 @@ body {
   -webkit-box-ordinal-group: 9;
       -ms-flex-order: 8;
           order: 8;
-  -ms-flex-preferred-size: 12%;
-      flex-basis: 12%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 @media screen and (min-width: 576px) {
@@ -476,11 +495,11 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  width: 50%;
+  width: 80%;
   border: 1px solid rgba(0, 0, 0, 0.3);
   background-color: rgba(124, 118, 184, 0.4);
   border-radius: 7px;
-  font-size: 0.5rem;
+  font-size: 1.3rem;
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -502,7 +521,7 @@ body {
   display: block;
   color: rgba(0, 0, 0, 0.6);
   text-decoration: none;
-  padding: 0.2rem 0;
+  padding: 0.5rem 0;
 }
 
 @media screen and (min-width: 1024px) {
@@ -520,8 +539,9 @@ body {
 }
 
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 @media screen and (min-width: 576px) {
@@ -536,22 +556,13 @@ body {
   }
 }
 
-.section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus p {
-  font-size: 0.6rem;
-}
-
-@media screen and (min-width: 992px) {
-  .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus p {
-    font-size: 1rem;
-  }
-}
-
 .section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus p:nth-child(1) {
-  font-size: 0.8rem;
+  font-size: 1.4rem;
+  padding-bottom: 1rem;
   font-weight: 900;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.5);
-  padding-bottom: 0.5rem;
+  text-align: center;
 }
 
 @media screen and (min-width: 1024px) {
@@ -563,10 +574,15 @@ body {
   }
 }
 
-.section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus i {
-  font-size: 0.5rem;
-  padding-right: 0.5rem;
-  padding-bottom: 0;
+.section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus ul {
+  list-style: square;
+}
+
+.section-previews .section-previews-content .preview-content .preview-content-wrapper-run .preview-content-run-bonus ul li {
+  font-size: 1.3rem;
+  margin-left: 1.5rem;
+  padding-bottom: 0.3rem;
+  text-align: left;
 }
 
 .section-previews .section-previews-content .animation-preview-content {
@@ -575,8 +591,6 @@ body {
 }
 
 .section-previews .section-previews-racing {
-  -ms-flex-preferred-size: 28%;
-      flex-basis: 28%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -586,7 +600,6 @@ body {
           flex-direction: column;
   -webkit-transition: 1s;
   transition: 1s;
-  height: 100vh;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -600,12 +613,9 @@ body {
 }
 
 .section-previews .section-previews-racing .section-previews-search {
-  -ms-flex-preferred-size: 10%;
-      flex-basis: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (min-width: 576px) {
@@ -634,7 +644,6 @@ body {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  background-color: rgba(210, 210, 210, 0.7);
 }
 
 @media screen and (min-width: 992px) {
@@ -650,27 +659,19 @@ body {
 }
 
 .section-previews .section-previews-racing .section-previews-search .select select {
-  font-weight: bold;
+  font-weight: 900;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
-  text-align: center;
   border: none;
-  text-transform: uppercase;
-  font-size: 0.45rem;
-  background-color: rgba(210, 210, 210, 0.7);
+  background-color: transparent;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   cursor: pointer;
-}
-
-@media screen and (min-width: 576px) {
-  .section-previews .section-previews-racing .section-previews-search .select select {
-    -webkit-appearance: auto;
-       -moz-appearance: auto;
-            appearance: auto;
-    font-size: 0.6rem;
-  }
+  text-align: center;
+  text-align-last: center;
+  font-size: 1.3rem;
+  padding: 0.2rem 0;
 }
 
 @media screen and (min-width: 992px) {
@@ -687,19 +688,11 @@ body {
   background-color: rgba(210, 210, 210, 0.1);
 }
 
-.section-previews .section-previews-racing .section-previews-search .select select:nth-child(1) {
-  font-size: 0.6rem;
-}
-
 @media screen and (min-width: 992px) {
   .section-previews .section-previews-racing .section-previews-search .select select:nth-child(1) {
     -ms-flex-preferred-size: 30%;
         flex-basis: 30%;
   }
-}
-
-.section-previews .section-previews-racing .section-previews-search .select select:nth-child(2) {
-  font-size: 0.6rem;
 }
 
 @media screen and (min-width: 992px) {
@@ -727,8 +720,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-preferred-size: 90%;
-      flex-basis: 90%;
 }
 
 @media screen and (min-width: 576px) {
@@ -821,7 +812,9 @@ body {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: calc(90vh/16);
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -830,6 +823,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+  padding: 0.4rem 0;
 }
 
 @media screen and (min-width: 576px) {
@@ -851,7 +845,8 @@ body {
 
 .section-previews .section-previews-racing .previews-racing .section-previews-all .preview p:nth-child(1) {
   font-weight: 900;
-  font-size: 0.6rem;
+  font-size: 1.4rem;
+  padding: 0.2rem 0;
 }
 
 @media screen and (min-width: 1024px) {
@@ -872,13 +867,17 @@ body {
 }
 
 .section-previews .section-previews-racing .previews-racing .section-previews-all .preview p {
-  font-size: 0.6rem;
+  font-size: 1.3rem;
 }
 
 @media screen and (min-width: 1024px) {
   .section-previews .section-previews-racing .previews-racing .section-previews-all .preview p {
     font-size: 0.7rem;
   }
+}
+
+.section-previews .section-previews-racing .previews-racing .section-previews-all .preview:nth-child(odd) {
+  background-color: rgba(210, 210, 210, 0.7);
 }
 
 .section-previews .section-previews-racing .previews-racing .section-previews-all .preview:hover {

@@ -6,7 +6,7 @@ const PreviewsSearchRegion = (props) => {
             <option value="all">Wszystkie</option>
             <option disabled>----------</option>
             <option value="dolnośląskie">Dolnośląskie</option>
-            <option value="kujawsko-pomorskie">Kujawsko-Pomorskie</option>
+            <option value="kujawsko-pomorskie">Kujawsko-Pom.</option>
             <option value="lubelskie">Lubelskie</option>
             <option value="lubuskie">Lubuskie</option>
             <option value="łódzkie">Łódzkie</option>
@@ -18,9 +18,9 @@ const PreviewsSearchRegion = (props) => {
             <option value="pomorskie">Pomorskie</option>
             <option value="śląskie">Śląskie</option>
             <option value="świętokrzyskie">Świętokrzyskie</option>
-            <option value="warmińsko-mazurskie">Warmińsko-Mazurskie</option>
+            <option value="warmińsko-mazurskie">Warmińsko-Maz.</option>
             <option value="wielkopolskie">Wielkopolskie</option>
-            <option value="zachodniopomorskie">Zachodniopomorskie</option>
+            <option value="zachodniopomorskie">Zachodniopom.</option>
         </select>
     )
 
