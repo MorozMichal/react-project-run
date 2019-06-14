@@ -420,7 +420,7 @@
         border-left: 1px solid rgba(0, 0, 0, 0.1);
 
         @media screen and (min-width: 960px) {
-            min-height: 100vh;
+            // min-height: 100vh;
             transform: translateX(90%);
             flex-basis: 35%;
             border-left: none;
@@ -569,7 +569,7 @@
 
                     @media screen and (min-width: 960px) {
                         flex-basis: 50%;
-                        min-height: calc(90vh/8);
+                        // min-height: calc(90vh/8);
                         flex-grow: 0;
                     }
 
