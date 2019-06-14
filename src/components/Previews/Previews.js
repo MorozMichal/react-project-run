@@ -166,6 +166,7 @@ class Previews extends Component {
         return (
             <>
                 <section className="section-previews" >
+
                     <PreviewsContent
                         arrayContent={arrayContent}
                     />
@@ -187,6 +188,7 @@ class Previews extends Component {
                                 click={this.handleClick}
                             />
                         </div>
+
                     </div>
                 </section>
             </>
