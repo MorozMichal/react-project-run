@@ -1,0 +1,109 @@
+/* SEKCJA HEADER */
+
+header {
+    height: 100vh;
+    background-image: url(../img/background/header_mobile.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    position: relative;
+
+    .header-wrapper-menu {
+        position: fixed;
+        width: 100%;
+        padding: 1rem 0;
+        z-index: 1000;
+
+        @media screen and (min-width: 1024px) {
+            padding: 1.5rem 0;
+        }
+
+        .header-menu {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            text-transform: uppercase;
+            font-size: $font-size-md;
+            letter-spacing: 0.2rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.3);
+            z-index: 1000;
+
+            @media screen and (min-width: 1024px) {
+                font-size: $font-size-lg;
+            }
+
+            i {
+                padding-left: 0.5rem;
+
+            }
+
+        }
+
+        .header-menu-bgcolor-start {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .header-menu-bgcolor-scroll {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        .header-menu:hover {
+            cursor: pointer;
+            color: $color-secondary-hover;
+        }
+
+    }
+
+    h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        letter-spacing: 0.3rem;
+        color: rgba(255, 255, 255, 0.3);
+        width: 100%;
+        text-transform: uppercase;
+        text-align: center;
+
+        @media screen and (min-width: 1024px) {
+            font-size: 5rem;
+        }
+
+    }
+
+    .header-button-down {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 0.5rem 3rem;
+        animation: headerButtonDown 2s linear infinite;
+    }
+
+    .header-button-down:hover {
+        cursor: pointer;
+        color: black;
+
+    }
+
+}
+
+@keyframes headerButtonDown {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

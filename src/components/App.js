@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Previews from './Previews/Previews'
+import Home from './Home/Home'
 import './style.scss';
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
 
     return (
       <>
+        <Home />
         <Previews />
       </>
     )
