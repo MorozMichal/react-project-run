@@ -8,10 +8,7 @@
     overflow: hidden;
 
     .section-previews-content {
-<<<<<<< HEAD
-=======
         display: flex;
->>>>>>> 757732b7889bd8908f60844c183ab2918a1c39b2
         flex-basis: 70%;
         text-align: center;
 
@@ -29,10 +26,6 @@
 
             .preview-content-header {
                 display: flex;
-<<<<<<< HEAD
-                // height: 10vh;
-=======
->>>>>>> 757732b7889bd8908f60844c183ab2918a1c39b2
                 background-color: rgba(210, 210, 210, 0.5);
 
                 @media screen and (min-width: 576px) {
@@ -86,11 +79,7 @@
                     }
 
                     .preview-content-city {
-<<<<<<< HEAD
-                        font-size: 2.2rem;
-=======
                         font-size: 1.9rem;
->>>>>>> 757732b7889bd8908f60844c183ab2918a1c39b2
                         font-weight: 900;
 
                         @media screen and (min-width: 960px) {
@@ -100,18 +89,7 @@
                     }
 
                     .preview-content-description {
-<<<<<<< HEAD
-                        line-height: 2rem;
-                        font-size: 1.4rem;
-
-                        @media screen and (min-width: 1024px) {
-                            padding-top: 5px;
-                            font-size: 1.2rem;
-                        }
-
-=======
                         font-weight: 900;
->>>>>>> 757732b7889bd8908f60844c183ab2918a1c39b2
                     }
 
                 }
